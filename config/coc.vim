@@ -1,6 +1,7 @@
 " Configuration of coc plugin
 let g:coc_global_extensions= [ 
       \ 'coc-explorer',
+      \ 'coc-snippets',
       \ 'coc-sh',
       \ 'coc-vimlsp',
       \ 'coc-html', 

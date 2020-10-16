@@ -12,7 +12,7 @@ set shiftwidth=2                " Default tab width
 set tabstop=2                   " Default tab width
 
 " Encoding
-" " User utf-8 as base encoding; but autofit other encoding
+" Use utf-8 as base encoding; but autofit other encoding
 set fencs=utf-8,ucs-bom,shift-jis,gb18032,gbk,gb2312,cp936
 set termencoding=utf-8
 set encoding=utf-8
