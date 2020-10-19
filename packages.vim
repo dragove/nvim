@@ -5,10 +5,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Better vim autocompletions
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" For tree view of files
-Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 " Fuzzy File Finder
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " ranger file explorer plugin
 Plug 'kevinhwang91/rnvimr'
@@ -20,6 +17,8 @@ Plug 'honza/vim-snippets'
 Plug 'luochen1990/rainbow'
 " rainbow csv
 Plug 'mechatroner/rainbow_csv'
+" Float Terminal
+Plug 'voldikss/vim-floaterm'
 
 call plug#end()
 
