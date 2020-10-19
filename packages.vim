@@ -5,7 +5,6 @@ Plug 'vim-airline/vim-airline-themes'
 " Better vim autocompletions
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Fuzzy File Finder
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " ranger file explorer plugin
 Plug 'kevinhwang91/rnvimr'
@@ -13,6 +12,10 @@ Plug 'kevinhwang91/rnvimr'
 Plug 'jiangmiao/auto-pairs'
 " Snippets
 Plug 'honza/vim-snippets'
+" Float Terminal
+Plug 'voldikss/vim-floaterm'
+
+
 call plug#end()
 
 source ~/.config/nvim/config/coc.vim
