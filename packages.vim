@@ -4,8 +4,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Better vim autocompletions
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" For tree view of files
-Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 " Fuzzy File Finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
