@@ -1,4 +1,5 @@
 call plug#begin('~/.config/nvim/plugged')
+
 " Show status line
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -15,6 +16,11 @@ Plug 'kevinhwang91/rnvimr'
 Plug 'jiangmiao/auto-pairs'
 " Snippets
 Plug 'honza/vim-snippets'
+" rainbow parentheses
+Plug 'luochen1990/rainbow'
+" rainbow csv
+Plug 'mechatroner/rainbow_csv'
+
 call plug#end()
 
 source ~/.config/nvim/config/coc.vim
