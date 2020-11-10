@@ -21,7 +21,10 @@ Plug 'mechatroner/rainbow_csv'
 Plug 'voldikss/vim-floaterm'
 " vim previewe
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-
+" vim surround
+Plug 'tpope/vim-surround'
+" wildfire
+Plug 'gcmt/wildfire.vim'
 
 call plug#end()
 
