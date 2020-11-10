@@ -41,5 +41,13 @@
   "diagnostic.virtualTextPrefix": " ❯❯❯ ",
   "diagnostic.virtualText": true,
   "codeLens.enable": true,
-  "coc.preferences.formatOnSaveFiletypes": ["json", "html"]
+  "coc.preferences.formatOnSaveFiletypes": [
+    "json",
+    "html",
+    "css",
+    "markdown",
+    "java",
+    "c",
+    "cpp"
+  ]
 }
