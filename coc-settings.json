@@ -45,9 +45,14 @@
     "json",
     "html",
     "css",
+    "javascript",
+    "typescript",
     "markdown",
     "java",
     "c",
     "cpp"
-  ]
+  ],
+  "prettier.singleQuote": true,
+  "prettier.semi": false,
+  "prettier.arrowParens": "avoid"
 }
