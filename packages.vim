@@ -1,5 +1,8 @@
 call plug#begin('~/.config/nvim/plugged')
 
+" One dark theme
+Plug 'joshdick/onedark.vim'
+
 " Show status line
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'

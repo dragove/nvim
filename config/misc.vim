@@ -27,3 +27,7 @@ let g:floaterm_height=0.8
 let g:floaterm_wintitle=0
 let g:floaterm_autoclose=1
 
+" Set color scheme and remain backgroud transparent
+colorscheme onedark
+hi Normal guibg=NONE ctermbg=NONE
+
