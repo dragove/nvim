@@ -12,8 +12,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf.vim'
 " Ranger file explorer plugin
 Plug 'kevinhwang91/rnvimr'
-" Pair brackets
-Plug 'jiangmiao/auto-pairs'
 " Snippets
 Plug 'honza/vim-snippets'
 " Rainbow parentheses
