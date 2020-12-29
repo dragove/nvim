@@ -3,6 +3,9 @@ call plug#begin('~/.config/nvim/plugged')
 " One dark theme
 Plug 'joshdick/onedark.vim'
 
+" syntax-hilight improvement
+Plug 'sheerun/vim-polyglot'
+
 " Show status line
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
