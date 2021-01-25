@@ -40,6 +40,9 @@ Plug 'ryanoasis/vim-devicons'
 " Plug 'kyazdani42/nvim-web-devicons'
 " Better look buffer line
 " Plug 'romgrk/barbar.nvim'
+" Plugin for plantuml
+Plug 'tyru/open-browser.vim'
+Plug 'weirongxu/plantuml-previewer.vim'
 
 call plug#end()
 
