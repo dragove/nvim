@@ -10,8 +10,6 @@ let g:coc_global_extensions= [
       \ 'coc-tsserver',
       \ 'coc-json',
       \ 'coc-prettier',
-      \ 'coc-sql',
-      \ 'coc-clangd',
       \ 'coc-python',
       \ 'coc-java']
 

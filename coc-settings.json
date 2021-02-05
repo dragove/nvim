@@ -29,16 +29,14 @@
     "value": "",
     "variable": ""
   },
-  "diagnostic.signOffset": 1,
   "diagnostic.errorSign": "\uf467",
   "diagnostic.warningSign": "\uf071",
   "diagnostic.infoSign": "\uf129",
   "diagnostic.hintSign": "\uf864",
   "diagnostic.displayByAle": false,
   "diagnostic.refreshOnInsertMode": false,
-  "diagnostic.refreshAfterSave": false,
   "diagnostic.checkCurrentLine": true,
-  "diagnostic.virtualTextPrefix": " ❯❯❯ ",
+  "diagnostic.virtualTextPrefix": " ==> ",
   "diagnostic.virtualText": true,
   "codeLens.enable": true,
   "coc.preferences.formatOnSaveFiletypes": [
@@ -54,5 +52,12 @@
   ],
   "prettier.singleQuote": true,
   "prettier.semi": false,
-  "prettier.arrowParens": "avoid"
+  "prettier.arrowParens": "avoid",
+  "languageserver": {
+    "clangd": {
+    "command": "clangd",
+    "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
+    "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
+  }
+  }
 }
