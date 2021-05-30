@@ -71,13 +71,9 @@ end
 time("try_loadstring definition", false)
 time("Defining packer_plugins", true)
 _G.packer_plugins = {
-  ["friendly-snippets"] = {
+  LuaSnip = {
     loaded = true,
-    path = "/home/dove/.local/share/nvim/site/pack/packer/start/friendly-snippets"
-  },
-  ["lspkind-nvim"] = {
-    loaded = true,
-    path = "/home/dove/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
+    path = "/home/dove/.local/share/nvim/site/pack/packer/start/LuaSnip"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -94,10 +90,6 @@ _G.packer_plugins = {
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/dove/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
-  },
-  ["nvim-lspinstall"] = {
-    loaded = true,
-    path = "/home/dove/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -138,10 +130,6 @@ _G.packer_plugins = {
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/dove/.local/share/nvim/site/pack/packer/start/telescope.nvim"
-  },
-  ["vim-vsnip"] = {
-    loaded = true,
-    path = "/home/dove/.local/share/nvim/site/pack/packer/start/vim-vsnip"
   },
   ["zephyr-nvim"] = {
     loaded = true,

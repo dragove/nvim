@@ -28,8 +28,7 @@ return require('packer').startup(function()
   use 'akinsho/nvim-bufferline.lua'
 
   -- snippet support
-  use 'hrsh7th/vim-vsnip'
-  use 'rafamadriz/friendly-snippets'
+  use 'L3MON4D3/LuaSnip'
 
   -- file explorer
   use 'kyazdani42/nvim-tree.lua'
