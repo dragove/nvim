@@ -75,6 +75,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/dove/.local/share/nvim/site/pack/packer/start/LuaSnip"
   },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/home/dove/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
+  },
+  kommentary = {
+    loaded = true,
+    path = "/home/dove/.local/share/nvim/site/pack/packer/start/kommentary"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/dove/.local/share/nvim/site/pack/packer/start/lualine.nvim"

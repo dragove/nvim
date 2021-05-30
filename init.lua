@@ -8,6 +8,7 @@ require('init-treesitter')
 require('init-compe')
 require('init-telescope')
 require('init-tree')
+require('init-git')
 
 -- setup themes and non config plugins
 require('zephyr')

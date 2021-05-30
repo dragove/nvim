@@ -19,6 +19,8 @@ return require('packer').startup(function()
   use 'steelsojka/pears.nvim'
   -- surround with
   use 'blackCauldron7/surround.nvim'
+  -- comment
+  use 'b3nj5m1n/kommentary'
 
   -- color scheme
   use 'glepnir/zephyr-nvim'
@@ -26,6 +28,8 @@ return require('packer').startup(function()
   use 'hoob3rt/lualine.nvim'
   -- clickable buffer line
   use 'akinsho/nvim-bufferline.lua'
+  -- git integration
+  use 'lewis6991/gitsigns.nvim'
 
   -- snippet support
   use 'L3MON4D3/LuaSnip'

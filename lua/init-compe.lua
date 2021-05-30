@@ -1,6 +1,5 @@
 vim.o.completeopt = "menuone,noselect"
 
-
 require('compe').setup {
     enabled = true,
     autocomplete = true,
@@ -87,3 +86,9 @@ end)
 
 -- init surround
 require('surround').setup {}
+
+-- init comment
+require('kommentary.config').configure_language("default", {
+    prefer_single_line_comments = true,
+})
+
