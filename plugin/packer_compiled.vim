@@ -139,6 +139,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/dove/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
+  ["which-key.nvim"] = {
+    loaded = true,
+    path = "/home/dove/.local/share/nvim/site/pack/packer/start/which-key.nvim"
+  },
   ["zephyr-nvim"] = {
     loaded = true,
     path = "/home/dove/.local/share/nvim/site/pack/packer/start/zephyr-nvim"

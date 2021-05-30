@@ -21,6 +21,7 @@ opt("o", "mouse", "a")
 opt("w", "signcolumn", "yes")
 opt("o", "cmdheight", 1)
 
+opt("o", "timeoutlen", 500) -- timeout for which key
 opt("o", "updatetime", 250) -- update interval for gitsigns
 opt("o", "clipboard", "unnamedplus")
 

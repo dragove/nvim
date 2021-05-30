@@ -30,6 +30,8 @@ return require('packer').startup(function()
   use 'akinsho/nvim-bufferline.lua'
   -- git integration
   use 'lewis6991/gitsigns.nvim'
+  -- which-key
+  use 'folke/which-key.nvim'
 
   -- snippet support
   use 'L3MON4D3/LuaSnip'

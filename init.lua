@@ -9,6 +9,7 @@ require('init-compe')
 require('init-telescope')
 require('init-tree')
 require('init-git')
+require('init-which-key')
 
 -- setup themes and non config plugins
 require('zephyr')
