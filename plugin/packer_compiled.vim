@@ -75,17 +75,13 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/dove/.local/share/nvim/site/pack/packer/start/friendly-snippets"
   },
-  ["galaxyline.nvim"] = {
-    loaded = true,
-    path = "/home/dove/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
-  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/home/dove/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
   },
-  ["nvim-autopairs"] = {
+  ["lualine.nvim"] = {
     loaded = true,
-    path = "/home/dove/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
+    path = "/home/dove/.local/share/nvim/site/pack/packer/start/lualine.nvim"
   },
   ["nvim-bufferline.lua"] = {
     loaded = true,
@@ -98,6 +94,10 @@ _G.packer_plugins = {
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/dove/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+  },
+  ["nvim-lspinstall"] = {
+    loaded = true,
+    path = "/home/dove/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -114,6 +114,10 @@ _G.packer_plugins = {
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/dove/.local/share/nvim/site/pack/packer/start/packer.nvim"
+  },
+  ["pears.nvim"] = {
+    loaded = true,
+    path = "/home/dove/.local/share/nvim/site/pack/packer/start/pears.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
@@ -134,10 +138,6 @@ _G.packer_plugins = {
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/dove/.local/share/nvim/site/pack/packer/start/telescope.nvim"
-  },
-  ["vim-devicons"] = {
-    loaded = true,
-    path = "/home/dove/.local/share/nvim/site/pack/packer/start/vim-devicons"
   },
   ["vim-vsnip"] = {
     loaded = true,

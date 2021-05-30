@@ -1,4 +1,4 @@
-require "bufferline".setup {
+require('bufferline').setup {
     options = {
         offsets = {{filetype = "NvimTree", text = "Explorer"}},
         buffer_close_icon = "",

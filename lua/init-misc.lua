@@ -13,7 +13,7 @@ opt("o", "splitbelow", true)
 opt("o", "splitright", true)
 opt("o", "termguicolors", true)
 opt("w", "number", true)
-opt("o", "numberwidth", 4)
+opt("o", "numberwidth", 2)
 opt("w", "cul", true)
 
 opt("o", "mouse", "a")
@@ -26,7 +26,7 @@ opt("o", "clipboard", "unnamedplus")
 
 -- for indenline
 opt("b", "expandtab", true)
-opt("b", "shiftwidth", 4)
+opt("b", "shiftwidth", 2)
 
 local M = {}
 
