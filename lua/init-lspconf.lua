@@ -37,3 +37,28 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+-- setup for lua language server
+require'lspconfig'.sumneko_lua.setup {
+  cmd = {"lua-language-server", "-E", "/usr/share/lua-language-server/main.lua"};
+  settings = {
+    Lua = {
+      runtime = {
+        version = 'LuaJIT',
+        path = vim.split(package.path, ';'),
+      },
+      diagnostics = {
+        globals = {'vim'},
+      },
+      workspace = {
+        library = {
+          [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+          [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
+        },
+      },
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
+}
+
