@@ -8,6 +8,8 @@ return require('packer').startup(function()
   use 'nvim-lua/popup.nvim'
   -- icons for other plugins
   use 'kyazdani42/nvim-web-devicons'
+  -- termial integration
+  use 'akinsho/nvim-toggleterm.lua'
 
   -- auto completion
   use 'hrsh7th/nvim-compe'
