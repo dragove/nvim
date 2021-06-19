@@ -18,7 +18,9 @@ return require('packer').startup(function()
   -- treesitter config
   use 'nvim-treesitter/nvim-treesitter'
   -- auto pairs
-  use 'steelsojka/pears.nvim'
+  use 'windwp/nvim-autopairs'
+  -- auto tags
+  use 'windwp/nvim-ts-autotag'
   -- surround with
   use 'blackCauldron7/surround.nvim'
   -- comment
