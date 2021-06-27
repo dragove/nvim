@@ -37,6 +37,11 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+-- setup for java jdtls
+require'lspconfig'.jdtls.setup {
+  cmd = {"jdtls"}
+}
+
 -- setup for lua language server
 require'lspconfig'.sumneko_lua.setup {
   cmd = {"lua-language-server", "-E", "/usr/share/lua-language-server/main.lua"};
