@@ -25,6 +25,8 @@ return require('packer').startup(function()
   use 'blackCauldron7/surround.nvim'
   -- comment
   use 'b3nj5m1n/kommentary'
+  -- indent
+  use {"lukas-reineke/indent-blankline.nvim", branch = "lua"}
 
   -- color scheme
   use 'glepnir/zephyr-nvim'
