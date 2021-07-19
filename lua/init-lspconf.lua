@@ -29,9 +29,9 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-local servers = { 'clangd', 'pyright', 'bashls' }
+local servers = { 'clangd', 'pyright', 'bashls', 'gopls' }
 for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup { 
+  nvim_lsp[lsp].setup {
     on_attach = on_attach,
     capabilities = capabilities
   }
