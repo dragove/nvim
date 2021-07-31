@@ -41,6 +41,7 @@ return require('packer').startup(function()
 
   -- snippet support
   use 'L3MON4D3/LuaSnip'
+  use 'rafamadriz/friendly-snippets'
 
   -- file explorer
   use 'kyazdani42/nvim-tree.lua'

@@ -34,6 +34,7 @@ require('compe').setup {
 
 local luasnip = require('luasnip')
 
+require("luasnip/loaders/from_vscode").lazy_load({ paths = { "./friendly-snippets" } })
 local t = function(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
