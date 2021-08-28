@@ -1,8 +1,5 @@
 local ts_config = require("nvim-treesitter.configs")
 
 ts_config.setup {
-    ensure_installed = "maintained",
-    highlight = { enable = true },
-    indent = { enable = true },
-    autotag = { enable = true }
+    ensure_installed = "maintained"
 }

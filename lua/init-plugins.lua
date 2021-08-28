@@ -12,7 +12,13 @@ return require('packer').startup(function()
   use 'akinsho/nvim-toggleterm.lua'
 
   -- auto completion
-  use 'hrsh7th/nvim-compe'
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-nvim-lsp'
+  -- snippet support
+  use 'L3MON4D3/LuaSnip'
+  use 'saadparwaiz1/cmp_luasnip'
+  use 'rafamadriz/friendly-snippets'
   -- lsp support
   use 'neovim/nvim-lspconfig'
   -- treesitter config
@@ -29,7 +35,7 @@ return require('packer').startup(function()
   use 'lukas-reineke/indent-blankline.nvim'
 
   -- color scheme
-  use 'glepnir/zephyr-nvim'
+  use 'rafamadriz/neon'
   -- status line
   use 'hoob3rt/lualine.nvim'
   -- clickable buffer line
@@ -39,9 +45,6 @@ return require('packer').startup(function()
   -- which-key
   use 'folke/which-key.nvim'
 
-  -- snippet support
-  use 'L3MON4D3/LuaSnip'
-  use 'rafamadriz/friendly-snippets'
 
   -- file explorer
   use 'kyazdani42/nvim-tree.lua'

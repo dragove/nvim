@@ -27,7 +27,21 @@ local on_attach = function(client, bufnr)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.documentationFormat = { 'markdown', 'plaintext' }
 capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities.textDocument.completion.completionItem.preselectSupport = true
+capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
+capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
+capabilities.textDocument.completion.completionItem.deprecatedSupport = true
+capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
+capabilities.textDocument.completion.completionItem.tagSupport = { valueSet = { 1 } }
+capabilities.textDocument.completion.completionItem.resolveSupport = {
+  properties = {
+    'documentation',
+    'detail',
+    'additionalTextEdits',
+  },
+}
 
 local servers = { 'clangd', 'pyright', 'bashls', 'gopls' }
 for _, lsp in ipairs(servers) do
@@ -37,14 +51,11 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- setup for java jdtls
-require'lspconfig'.jdtls.setup {
-  cmd = {"jdtls"}
-}
-
 -- setup for lua language server
 require'lspconfig'.sumneko_lua.setup {
-  cmd = {"lua-language-server", "-E", "/usr/share/lua-language-server/main.lua"};
+  cmd = {"lua-language-server", "-E", "/usr/share/lua-language-server/main.lua"},
+  on_attach = on_attach,
+  capabilities = capabilities,
   settings = {
     Lua = {
       runtime = {

@@ -1,4 +1,3 @@
-local cmd = vim.cmd
 local g = vim.g
 
 g.nvim_tree_width = 25
@@ -37,12 +36,7 @@ g.nvim_tree_icons = {
     }
 }
 
-local get_lua_cb = function(cb_name)
-    return string.format(":lua require('nvim-tree').on_keypress('%s')<CR>", cb_name)
-end
-
 -- Mappings for nvimtree
-
 vim.api.nvim_set_keymap(
     "n", "<C-e>", ":NvimTreeToggle<CR>",
     {
@@ -50,10 +44,4 @@ vim.api.nvim_set_keymap(
         silent = true
     }
 )
-
-cmd "hi NvimTreeFolderIcon guifg = #61afef"
-cmd "hi NvimTreeFolderName guifg = #61afef"
-cmd "hi NvimTreeIndentMarker guifg=#383c44"
-cmd "hi NvimTreeNormal guibg=#1b1f27"
-cmd "hi NvimTreeVertSplit guifg=#1e222a"
 
