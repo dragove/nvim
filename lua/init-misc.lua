@@ -7,6 +7,8 @@ vim.o.mouse         = "a"       -- Enable mouse for any mode
 vim.o.errorbells    = false     -- Disable sounds for errors
 vim.o.writebackup   = false
 vim.o.termguicolors = true
+-- Better completion
+vim.o.completeopt   = "menuone,noselect"
 
 vim.bo.smartindent  = true
 vim.bo.expandtab    = true
