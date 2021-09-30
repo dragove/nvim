@@ -7,12 +7,12 @@ vim.o.mouse         = "a"       -- Enable mouse for any mode
 vim.o.errorbells    = false     -- Disable sounds for errors
 vim.o.writebackup   = false
 vim.o.termguicolors = true
+vim.o.tabstop       = 2
+vim.o.shiftwidth    = 2
+vim.o.smartindent   = true
+vim.o.expandtab     = true
 -- Better completion
 vim.o.completeopt   = "menuone,noselect"
-
-vim.bo.smartindent  = true
-vim.bo.expandtab    = true
-vim.bo.shiftwidth   = 2
 
 vim.wo.number       = true      -- Show line number
 vim.wo.cursorline   = true      -- Highlight current line number
