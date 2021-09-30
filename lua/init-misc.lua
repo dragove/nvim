@@ -1,44 +1,25 @@
-local scopes = {o = vim.o, b = vim.bo, w = vim.wo}
+vim.o.hidden        = true      -- Keep multiple buffers open
+vim.o.splitright    = true      -- split to the right in vsplit
+vim.o.splitbelow    = true      -- Split to the bottom in split
+vim.o.updatetime    = 250 -- Faster completion
+vim.o.timeoutlen    = 500 -- timeout for which key
+vim.o.mouse         = "a" -- Enable mouse for any mode
+vim.o.errorbells    = false -- Disable sounds for errors
+vim.o.writebackup   = false
+vim.o.termguicolors = true
 
-local function opt(scope, key, value)
-    scopes[scope][key] = value
-    if scope ~= "o" then
-        scopes["o"][key] = value
-    end
-end
+vim.bo.smartindent  = true
+vim.bo.shiftwidth   = 2
 
-opt("o", "hidden", true)
-opt("o", "ignorecase", true)
-opt("o", "splitbelow", true)
-opt("o", "splitright", true)
-opt("o", "termguicolors", true)
-opt("w", "number", true)
-opt("o", "numberwidth", 2)
-opt("w", "cul", true)
+vim.wo.number       = true -- Show line number
+vim.wo.cursorline   = true -- Highlight current line
+vim.wo.wrap         = false -- Display long text in one line
+vim.wo.signcolumn   = "yes"
 
-opt("o", "mouse", "a")
+-- set up themes
+vim.g.neon_transparent = true
+vim.cmd('colorscheme neon')
 
-opt("w", "signcolumn", "yes")
-opt("o", "cmdheight", 1)
+-- setup space as leader key
+vim.g.mapleader = ' '
 
-opt("o", "timeoutlen", 500) -- timeout for which key
-opt("o", "updatetime", 250) -- update interval for gitsigns
-opt("o", "clipboard", "unnamedplus")
-
--- for indenline
-opt("b", "expandtab", true)
-opt("b", "shiftwidth", 2)
-
-local M = {}
-
-function M.is_buffer_empty()
-    -- Check whether the current buffer is empty
-    return vim.fn.empty(vim.fn.expand("%:t")) == 1
-end
-
-function M.has_width_gt(cols)
-    -- Check if the windows width is greater than a given number of columns
-    return vim.fn.winwidth(0) / 2 > cols
-end
-
-return M
