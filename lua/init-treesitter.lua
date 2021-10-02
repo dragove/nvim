@@ -1,6 +1,7 @@
-local ts_config = require("nvim-treesitter.configs")
-
-ts_config.setup {
+require("nvim-treesitter.configs").setup {
   ensure_installed = "maintained",
-  autotag = { enable = true }
+  indent = { enable = true },
+  -- auto tag with nvim-ts-autotag
+  autotag = { enable = true },
+  highlight = { enable = true }
 }

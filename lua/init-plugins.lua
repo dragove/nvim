@@ -1,3 +1,4 @@
+local use = require('packer').use
 return require('packer').startup(function()
   -- package manager
   use 'wbthomason/packer.nvim'
@@ -23,6 +24,7 @@ return require('packer').startup(function()
   use 'neovim/nvim-lspconfig'
   -- treesitter config
   use 'nvim-treesitter/nvim-treesitter'
+  use 'nvim-treesitter/nvim-treesitter-textobjects'
   -- auto pairs
   use 'windwp/nvim-autopairs'
   -- auto tags

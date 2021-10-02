@@ -20,7 +20,7 @@ vim.api.nvim_set_keymap("n", "<Leader>sg", [[<Cmd>lua require('telescope.builtin
 vim.api.nvim_set_keymap("n", "<Leader>sb", [[<Cmd>lua require('telescope.builtin').buffers()<CR>]], opt)
 vim.api.nvim_set_keymap("n", "<Leader>sh", [[<Cmd>lua require('telescope.builtin').help_tags()<CR>]], opt)
 
--- highlights 
+-- highlights
 local cmd = vim.cmd
 
 cmd "hi TelescopeBorder   guifg=#2a2e36"

@@ -12,7 +12,7 @@ vim.o.shiftwidth    = 2
 vim.o.smartindent   = true
 vim.o.expandtab     = true
 -- Better completion
-vim.o.completeopt   = "menuone,noselect"
+vim.o.completeopt   = "menu,menuone,noselect"
 
 vim.wo.number       = true      -- Show line number
 vim.wo.cursorline   = true      -- Highlight current line number
@@ -25,4 +25,15 @@ vim.cmd('colorscheme neon')
 
 -- setup space as leader key
 vim.g.mapleader = ' '
+
+-- Highlight on yank
+vim.api.nvim_exec(
+  [[
+  augroup YankHighlight
+    autocmd!
+    autocmd TextYankPost * silent! lua vim.highlight.on_yank()
+  augroup end
+]],
+  false
+)
 
