@@ -37,7 +37,7 @@ return require('packer').startup(function()
   use 'lukas-reineke/indent-blankline.nvim'
 
   -- color scheme
-  use 'rafamadriz/neon'
+  use 'NTBBloodbath/doom-one.nvim'
   -- status line
   use 'hoob3rt/lualine.nvim'
   -- clickable buffer line

@@ -20,8 +20,7 @@ vim.wo.wrap         = false     -- Display long text in one line
 vim.wo.signcolumn   = "yes"
 
 -- set up themes
-vim.g.neon_transparent = true
-vim.cmd('colorscheme neon')
+vim.cmd[[colorscheme doom-one]]
 
 -- setup space as leader key
 vim.g.mapleader = ' '
