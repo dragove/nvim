@@ -29,7 +29,7 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
-local servers = { 'clangd', 'pyright', 'gopls' }
+local servers = { 'clangd', 'pyright', 'gopls', 'tsserver' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
@@ -38,7 +38,7 @@ for _, lsp in ipairs(servers) do
 end
 
 -- setup for lua language server
-require'lspconfig'.sumneko_lua.setup {
+nvim_lsp.sumneko_lua.setup {
   cmd = {"lua-language-server", "-E", "/usr/share/lua-language-server/main.lua"},
   on_attach = on_attach,
   capabilities = capabilities,
