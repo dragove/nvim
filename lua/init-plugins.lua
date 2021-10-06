@@ -1,5 +1,4 @@
-local use = require('packer').use
-return require('packer').startup(function()
+return require('packer').startup(function(use)
   -- package manager
   use 'wbthomason/packer.nvim'
 

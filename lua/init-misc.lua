@@ -1,10 +1,7 @@
 vim.o.hidden        = true      -- Keep multiple buffers open
 vim.o.splitright    = true      -- split to the right in vsplit
 vim.o.splitbelow    = true      -- Split to the bottom in split
-vim.o.updatetime    = 250       -- Faster completion
-vim.o.timeoutlen    = 500       -- timeout for which key
 vim.o.mouse         = "a"       -- Enable mouse for any mode
-vim.o.errorbells    = false     -- Disable sounds for errors
 vim.o.writebackup   = false
 vim.o.termguicolors = true
 vim.o.tabstop       = 2
@@ -23,19 +20,17 @@ vim.wo.signcolumn   = "yes"
 vim.g.doom_one_terminal_colors = true
 vim.g.doom_one_cursor_coloring = true
 vim.g.doom_one_transparent_background = true
-vim.cmd[[colorscheme doom-one]]
+vim.cmd('colorscheme doom-one')
 
 -- setup space as leader key
 vim.g.mapleader = ' '
 
 -- Highlight on yank
-vim.api.nvim_exec(
+vim.cmd(
   [[
   augroup YankHighlight
     autocmd!
     autocmd TextYankPost * silent! lua vim.highlight.on_yank()
   augroup end
-]],
-  false
-)
+]])
 
