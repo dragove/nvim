@@ -1,7 +1,7 @@
 local luasnip = require 'luasnip'
 require("luasnip/loaders/from_vscode").lazy_load({ paths = { "~/.local/share/nvim/site/pack/packer/start/friendly-snippets" } })
 local cmp = require('cmp')
-cmp.setup {
+cmp.setup({
     snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
@@ -42,9 +42,9 @@ cmp.setup {
     { name = 'luasnip' },
     { name = 'buffer' }
   }
-}
+})
 
-require('nvim-autopairs').setup()
+require('nvim-autopairs').setup({})
 
 -- you need setup cmp first put this after cmp.setup()
 require("nvim-autopairs.completion.cmp").setup({
@@ -54,7 +54,7 @@ require("nvim-autopairs.completion.cmp").setup({
 })
 
 -- init surround
-require('surround').setup {}
+require('surround').setup({})
 
 -- init comment
 require('kommentary.config').configure_language("default", {

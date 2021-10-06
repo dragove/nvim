@@ -1,4 +1,4 @@
-require('telescope').setup {
+require('telescope').setup({
   defaults = {
     borderchars = { '═', '║', '═', '║', '╔', '╗', '╝', '╚' },
   },
@@ -8,7 +8,7 @@ require('telescope').setup {
       find_cmd = "rg"
     }
   }
-}
+})
 
 require('telescope').load_extension('media_files')
 

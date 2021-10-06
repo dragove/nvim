@@ -17,10 +17,12 @@ vim.wo.wrap         = false     -- Display long text in one line
 vim.wo.signcolumn   = "yes"
 
 -- set up themes
-vim.g.doom_one_terminal_colors = true
-vim.g.doom_one_cursor_coloring = true
-vim.g.doom_one_transparent_background = true
-vim.cmd('colorscheme doom-one')
+require('doom-one').setup({
+  cursor_coloring = true,
+  terminal_colors = true,
+  enable_treesitter = true,
+  transparent_background = true
+})
 
 -- setup space as leader key
 vim.g.mapleader = ' '
