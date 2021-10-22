@@ -38,7 +38,7 @@ return require('packer').startup(function(use)
   -- color scheme
   use 'NTBBloodbath/doom-one.nvim'
   -- status line
-  use 'hoob3rt/lualine.nvim'
+  use 'nvim-lualine/lualine.nvim'
   -- clickable buffer line
   use 'akinsho/nvim-bufferline.lua'
   -- git integration
