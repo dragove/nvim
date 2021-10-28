@@ -1,0 +1,11 @@
+{
+  "name": "dragove-snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "c",
+        "path": "./lsp/c.json"
+      }
+    ]
+  }
+}
