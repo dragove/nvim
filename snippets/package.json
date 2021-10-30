@@ -5,6 +5,10 @@
       {
         "language": "c",
         "path": "./lsp/c.json"
+      },
+      {
+        "language": "cpp",
+        "path": "./lsp/cpp.json"
       }
     ]
   }

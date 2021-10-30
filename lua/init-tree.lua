@@ -1,4 +1,3 @@
-vim.g.nvim_tree_ignore = {'.git', 'node_modules'}
 vim.g.nvim_tree_quit_on_open = 1
 require('nvim-tree').setup({
   update_focused_file = {
@@ -6,6 +5,9 @@ require('nvim-tree').setup({
   },
   view = {
     auto_resize = true
+  },
+  filters = {
+    custom = {'.git', 'node_modules'}
   }
 })
 
