@@ -1,5 +1,6 @@
+-- load snippets made by luasnip
+require("snippets")
 local luasnip = require('luasnip')
-require("luasnip/loaders/from_vscode").lazy_load({ paths = { "./snippets" } })
 local cmp = require('cmp')
 cmp.setup({
   snippet = {
