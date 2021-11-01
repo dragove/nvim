@@ -18,18 +18,13 @@ local fmta = require("luasnip.extras.fmt").fmta
 local types = require("luasnip.util.types")
 local conds = require("luasnip.extras.expand_conditions")
 
-local function capitalize(args)
-  local content = unpack(args[1])
-  return content:gsub("^%l", string.upper)
-end
-
 return {
   -- use state
   s("us", {
     t("const ["),
     i(1, "state"),
     t(", set"),
-    f(capitalize, 1),
+    l(l._1:gsub("^%l", string.upper), 1),
     t("] = useState("),
     i(2, "initialState"),
     t(")")
