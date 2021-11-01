@@ -52,7 +52,12 @@ local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done())
 
 -- init surround
-require('surround').setup({})
+require('surround').setup({
+  mappings_style = 'surround',
+  map_insert_mode = false
+})
+-- disable surround in visual mode since conflictions in snippets
+vim.api.nvim_del_keymap('v', 's')
 
 -- init comment
 require('kommentary.config').configure_language("default", {
