@@ -22,8 +22,10 @@ return {
   -- start template
   s('libsst', {
     t({ '#include <stdio.h>',
-        '#include <stdlib.h>', '',
-        'int main() {', '\t' }),
+        '#include <stdlib.h>',
+        '',
+        'int main() {',
+        '\t' }),
     i(0),
     t({ '', '}' })
   })
