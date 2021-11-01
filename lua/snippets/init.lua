@@ -1,4 +1,5 @@
-require("luasnip").snippets = {
-  javascript = require("snippets/javascript"),
-  javascriptreact = require("snippets/javascriptreact")
+require('luasnip').snippets = {
+  c = require('snippets/c'),
+  javascript = require('snippets/javascript'),
+  javascriptreact = require('snippets/javascriptreact')
 }

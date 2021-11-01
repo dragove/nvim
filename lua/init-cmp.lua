@@ -1,5 +1,5 @@
 -- load snippets made by luasnip
-require("snippets")
+require('snippets')
 local luasnip = require('luasnip')
 local cmp = require('cmp')
 cmp.setup({
@@ -60,7 +60,7 @@ require('surround').setup({
 vim.api.nvim_del_keymap('v', 's')
 
 -- init comment
-require('kommentary.config').configure_language("default", {
+require('kommentary.config').configure_language('default', {
     prefer_single_line_comments = true,
 })
 

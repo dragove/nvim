@@ -19,25 +19,13 @@ local types = require('luasnip.util.types')
 local conds = require('luasnip.extras.expand_conditions')
 
 return {
-  -- use state
-  s('us', {
-    t('const ['),
-    i(1, 'state'),
-    t(', set'),
-    l(l._1:gsub('^%l', string.upper), 1),
-    t('] = useState('),
-    i(2, 'initialState'),
-    t(')')
-  }),
-  -- use effect
-  s('ue', {
-    t({ 'useEffect(() => {', '\t' }),
-    i(1, 'effect'),
-    t({ '', '}, [' }),
-    i(2, 'input'),
-    t('])')
-  }),
-  -- we can also use js snippets in react
-  unpack(require('snippets/javascript'))
+  -- start template
+  s('libsst', {
+    t({ '#include <stdio.h>',
+        '#include <stdlib.h>', '',
+        'int main() {', '\t' }),
+    i(0),
+    t({ '', '}' })
+  })
 }
 

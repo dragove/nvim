@@ -1,4 +1,4 @@
-require("toggleterm").setup{
+require('toggleterm').setup{
   -- size can be a number or function which is passed the current terminal
   size = 15,
   open_mapping = [[<c-\>]],
@@ -22,8 +22,8 @@ require("toggleterm").setup{
     height = 100,
     winblend = 3,
     highlights = {
-      border = "Normal",
-      background = "Normal",
+      border = 'Normal',
+      background = 'Normal',
     }
   }
 }

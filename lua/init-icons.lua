@@ -3,9 +3,9 @@ require('nvim-web-devicons').setup({
  -- DevIcon will be appended to `name`
  override = {
   zsh = {
-    icon = "",
-    color = "#428850",
-    name = "Zsh"
+    icon = '',
+    color = '#428850',
+    name = 'Zsh'
   }
  };
  -- globally enable default icons (default to false)
