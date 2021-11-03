@@ -3,26 +3,6 @@ require('snippets')
 local luasnip = require('luasnip')
 local cmp = require('cmp')
 
-local function cmp_snip_next(fallback)
-  if cmp.visible() then
-    cmp.select_next_item()
-  elseif luasnip.expand_or_jumpable() then
-    luasnip.expand_or_jump()
-  else
-    fallback()
-  end
-end
-
-local function cmp_snip_prev(fallback)
-  if cmp.visible() then
-    cmp.select_prev_item()
-  elseif luasnip.jumpable(-1) then
-    luasnip.jump(-1)
-  else
-    fallback()
-  end
-end
-
 cmp.setup({
   snippet = {
     expand = function(args)
@@ -32,22 +12,30 @@ cmp.setup({
   mapping = {
     ['<C-p>'] = cmp.mapping.select_prev_item(),
     ['<C-n>'] = cmp.mapping.select_next_item(),
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.close(),
     ['<CR>'] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true
     },
-    ['<Tab>'] = cmp.mapping({
-      i = cmp_snip_next,
-      s = cmp_snip_next
-    }),
-    ['<S-Tab>'] = cmp.mapping({
-      i = cmp_snip_prev,
-      s = cmp_snip_prev
-    })
+    ['<Tab>'] = cmp.mapping(function (fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+    ['<S-Tab>'] = cmp.mapping(function (fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { 'i', 's' })
   },
   sources = {
     { name = 'nvim_lsp' },
