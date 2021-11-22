@@ -18,6 +18,8 @@ cmp.setup({
       behavior = cmp.ConfirmBehavior.Replace,
       select = true
     },
+    ['<C-j>'] = cmp.mapping(function () luasnip.jump(1) end, { 'i', 's' }),
+    ['<C-k>'] = cmp.mapping(function () luasnip.jump(-1) end, { 'i', 's' }),
     ['<Tab>'] = cmp.mapping(function (fallback)
       if cmp.visible() then
         cmp.select_next_item()
