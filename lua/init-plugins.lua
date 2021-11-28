@@ -21,6 +21,10 @@ return require('packer').startup(function(use)
   use 'saadparwaiz1/cmp_luasnip'
   -- lsp support
   use 'neovim/nvim-lspconfig'
+  -- dap support
+  use 'mfussenegger/nvim-dap'
+  use 'rcarriga/nvim-dap-ui'
+  use 'theHamsta/nvim-dap-virtual-text'
   -- treesitter config
   use 'nvim-treesitter/nvim-treesitter'
   use 'nvim-treesitter/nvim-treesitter-textobjects'
