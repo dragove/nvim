@@ -64,3 +64,21 @@ nvim_lsp.sumneko_lua.setup({
   },
 })
 
+nvim_lsp.html.setup({
+  cmd = { "vscode-html-languageserver", "--stdio" },
+  filetypes = {"html", "htmldjango"},
+  on_attach = on_attach,
+  capabilities = capabilities
+})
+
+nvim_lsp.cssls.setup({
+  cmd = { "vscode-css-languageserver", "--stdio" },
+  on_attach = on_attach,
+  capabilities = capabilities
+})
+
+nvim_lsp.jsonls.setup({
+  cmd = { "vscode-json-languageserver", "--stdio" },
+  on_attach = on_attach,
+  capabilities = capabilities
+})
