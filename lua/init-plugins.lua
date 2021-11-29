@@ -42,7 +42,7 @@ return require('packer').startup(function(use)
   -- color scheme
   use 'NTBBloodbath/doom-one.nvim'
   -- status line
-  use 'NTBBloodbath/galaxyline.nvim'
+  use 'windwp/windline.nvim'
   -- clickable buffer line
   use 'akinsho/nvim-bufferline.lua'
   -- git integration

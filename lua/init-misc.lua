@@ -20,8 +20,20 @@ vim.wo.signcolumn   = 'yes'
 require('doom-one').setup({
   cursor_coloring = true,
   terminal_colors = true,
-  enable_treesitter = true,
-  transparent_background = true
+  transparent_background = true,
+  plugins_integrations = {
+      bufferline = true,
+      gitsigns = true,
+      telescope = true,
+      neogit = false,
+      nvim_tree = true,
+      dashboard = false,
+      startify = false,
+      whichkey = true,
+      indent_blankline = true,
+      vim_illuminate = false,
+      lspsaga = false,
+  },
 })
 
 -- setup space as leader key
