@@ -18,8 +18,6 @@ vim.wo.signcolumn   = 'yes'
 
 -- set up themes
 require('doom-one').setup({
-  cursor_coloring = true,
-  terminal_colors = true,
   transparent_background = true,
   plugins_integrations = {
       bufferline = true,
@@ -32,7 +30,7 @@ require('doom-one').setup({
       whichkey = true,
       indent_blankline = true,
       vim_illuminate = false,
-      lspsaga = false,
+      lspsaga = true,
   },
 })
 

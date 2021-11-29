@@ -21,6 +21,8 @@ return require('packer').startup(function(use)
   use 'saadparwaiz1/cmp_luasnip'
   -- lsp support
   use 'neovim/nvim-lspconfig'
+  -- lsp UI staffs
+  use { 'tami5/lspsaga.nvim', branch = 'nvim51' }
   -- dap support
   use 'mfussenegger/nvim-dap'
   use 'rcarriga/nvim-dap-ui'
