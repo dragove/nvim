@@ -23,6 +23,8 @@ return require('packer').startup(function(use)
   use 'neovim/nvim-lspconfig'
   -- lsp UI staffs
   use { 'tami5/lspsaga.nvim', branch = 'nvim51' }
+  -- java lsp
+  use 'mfussenegger/nvim-jdtls'
   -- dap support
   use 'mfussenegger/nvim-dap'
   use 'rcarriga/nvim-dap-ui'
