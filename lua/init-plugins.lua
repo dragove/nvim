@@ -39,7 +39,7 @@ return require('packer').startup(function(use)
   -- surround with
   use 'blackCauldron7/surround.nvim'
   -- comment
-  use 'b3nj5m1n/kommentary'
+  use 'numToStr/Comment.nvim'
   -- indent
   use 'lukas-reineke/indent-blankline.nvim'
 

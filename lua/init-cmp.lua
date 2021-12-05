@@ -61,7 +61,5 @@ require('surround').setup({
 vim.api.nvim_del_keymap('v', 's')
 
 -- init comment
-require('kommentary.config').configure_language('default', {
-    prefer_single_line_comments = true,
-})
+require('Comment').setup()
 
