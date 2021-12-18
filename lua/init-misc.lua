@@ -1,4 +1,3 @@
-vim.o.hidden        = true      -- Keep multiple buffers open
 vim.o.splitright    = true      -- split to the right in vsplit
 vim.o.splitbelow    = true      -- Split to the bottom in split
 vim.o.mouse         = 'a'       -- Enable mouse for any mode
