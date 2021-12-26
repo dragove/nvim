@@ -21,6 +21,13 @@ return require("packer").startup(function(use)
     use("saadparwaiz1/cmp_luasnip")
     -- lsp support
     use("neovim/nvim-lspconfig")
+    -- null-ls for missing ls functionalities
+    use({
+        "jose-elias-alvarez/null-ls.nvim",
+        config = function()
+            require("init-null-ls")
+        end,
+    })
     -- lsp UI staffs
     use("tami5/lspsaga.nvim")
     -- java lsp
