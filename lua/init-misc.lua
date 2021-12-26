@@ -1,19 +1,28 @@
-vim.o.splitright = true -- split to the right in vsplit
-vim.o.splitbelow = true -- Split to the bottom in split
-vim.o.mouse = "a" -- Enable mouse for any mode
+-- split to the right in vsplit
+vim.o.splitright = true
+-- Split to the bottom in split
+vim.o.splitbelow = true
+-- Enable mouse for any mode
+vim.o.mouse = "a"
 vim.o.writebackup = false
 vim.o.termguicolors = true
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.smartindent = true
 vim.o.expandtab = true
+-- Show line number
+vim.o.number = true
+-- Highlight current line number
+vim.o.cursorline = true
+-- Display long text in one line
+vim.o.wrap = false
+-- Show sign column (e.g. lsp Error sign)
+vim.o.signcolumn = "yes"
 -- Better completion
 vim.o.completeopt = "menu,menuone,noselect"
 
-vim.wo.number = true -- Show line number
-vim.wo.cursorline = true -- Highlight current line number
-vim.wo.wrap = false -- Display long text in one line
-vim.wo.signcolumn = "yes"
+-- setup space as leader key
+vim.g.mapleader = " "
 
 -- set up themes
 require("doom-one").setup({
@@ -32,9 +41,6 @@ require("doom-one").setup({
         lspsaga = true,
     },
 })
-
--- setup space as leader key
-vim.g.mapleader = " "
 
 -- Highlight on yank
 vim.cmd([[
