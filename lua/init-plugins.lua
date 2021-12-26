@@ -4,8 +4,6 @@ return require("packer").startup(function(use)
 
     -- lua functions
     use("nvim-lua/plenary.nvim")
-    -- popup windows implementation
-    use("nvim-lua/popup.nvim")
     -- icons for other plugins
     use("kyazdani42/nvim-web-devicons")
     -- termial integration
