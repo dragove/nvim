@@ -1,4 +1,3 @@
-local nvim_lsp = require("lspconfig")
 local on_attach = function(client, bufnr)
     local function buf_set_keymap(...)
         vim.api.nvim_buf_set_keymap(bufnr, ...)
@@ -8,6 +7,9 @@ local on_attach = function(client, bufnr)
     end
 
     buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
+
+    -- dap
+    require("jdtls").setup_dap({ hotcodereplace = "auto" })
 
     -- Mappings.
     local opts = { noremap = true, silent = true }
@@ -32,57 +34,29 @@ end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+local home = os.getenv("HOME")
+local root_markers = { "gradlew", "pom.xml", "mavenw", ".git" }
+local root_dir = require("jdtls.setup").find_root(root_markers)
+local workspace_folder = home .. "/Workspace/Java/.workspace" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
 
-local servers = { "clangd", "pyright", "gopls", "tsserver" }
-for _, lsp in ipairs(servers) do
-    nvim_lsp[lsp].setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-    })
-end
-
--- setup for lua language server
-nvim_lsp.sumneko_lua.setup({
-    cmd = { "lua-language-server", "-E", "/usr/share/lua-language-server/main.lua" },
-    on_attach = on_attach,
-    capabilities = capabilities,
-    settings = {
-        Lua = {
-            runtime = {
-                version = "LuaJIT",
-                path = vim.split(package.path, ";"),
-            },
-            diagnostics = {
-                globals = { "vim" },
-            },
-            workspace = {
-                library = {
-                    [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                    [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
-                },
-            },
-            telemetry = {
-                enable = false,
-            },
-        },
+local config = {
+    cmd = {
+        "jdtls",
+        "-Dlog.protocol=true",
+        "-Dlog.level=ALL",
+        "--add-modules=ALL-SYSTEM",
+        "--add-opens",
+        "java.base/java.util=ALL-UNNAMED",
+        "--add-opens",
+        "java.base/java.lang=ALL-UNNAMED",
+        "-data",
+        workspace_folder,
     },
-})
-
-nvim_lsp.html.setup({
-    cmd = { "vscode-html-languageserver", "--stdio" },
-    filetypes = { "html", "htmldjango" },
     on_attach = on_attach,
     capabilities = capabilities,
-})
-
-nvim_lsp.cssls.setup({
-    cmd = { "vscode-css-languageserver", "--stdio" },
-    on_attach = on_attach,
-    capabilities = capabilities,
-})
-
-nvim_lsp.jsonls.setup({
-    cmd = { "vscode-json-languageserver", "--stdio" },
-    on_attach = on_attach,
-    capabilities = capabilities,
-})
+    root_dir = root_dir,
+    settings = {
+        java = {},
+    },
+}
+require("jdtls").start_or_attach(config)
