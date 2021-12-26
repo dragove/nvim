@@ -1,4 +1,4 @@
--- split to the right in vsplit
+-- Split to the right in vsplit
 vim.o.splitright = true
 -- Split to the bottom in split
 vim.o.splitbelow = true
@@ -16,6 +16,8 @@ vim.o.number = true
 vim.o.cursorline = true
 -- Display long text in one line
 vim.o.wrap = false
+-- Do not fold on default
+vim.o.foldenable = false
 -- Show sign column (e.g. lsp Error sign)
 vim.o.signcolumn = "yes"
 -- Better completion

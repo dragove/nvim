@@ -5,4 +5,5 @@ require("nvim-treesitter.configs").setup({
     highlight = { enable = true },
 })
 
-require("nvim-treesitter.query")
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
