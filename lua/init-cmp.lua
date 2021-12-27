@@ -64,5 +64,3 @@ require("surround").setup({
 -- disable surround in visual mode since conflictions in snippets
 vim.api.nvim_del_keymap("v", "s")
 
--- init comment
-require("Comment").setup()

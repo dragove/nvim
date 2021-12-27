@@ -51,7 +51,12 @@ return require("packer").startup(function(use)
     -- surround with
     use("blackCauldron7/surround.nvim")
     -- comment
-    use("numToStr/Comment.nvim")
+    use({
+        "numToStr/Comment.nvim",
+        config = function()
+            require("Comment").setup()
+        end,
+    })
     -- indent
     use("lukas-reineke/indent-blankline.nvim")
 
