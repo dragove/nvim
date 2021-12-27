@@ -61,7 +61,12 @@ return require("packer").startup(function(use)
     use("lukas-reineke/indent-blankline.nvim")
 
     -- color scheme
-    use("NTBBloodbath/doom-one.nvim")
+    use({
+        "olimorris/onedarkpro.nvim",
+        config = function()
+            require("init-theme")
+        end,
+    })
     -- status line
     use("windwp/windline.nvim")
     -- clickable buffer line
