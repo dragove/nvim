@@ -42,8 +42,6 @@ return require("packer").startup(function(use)
     use("theHamsta/nvim-dap-virtual-text")
     -- treesitter config
     use("nvim-treesitter/nvim-treesitter")
-    -- show scope in code with treesitter
-    use("SmiteshP/nvim-gps")
     -- auto pairs
     use("windwp/nvim-autopairs")
     -- auto tags

@@ -1,9 +1,7 @@
 local windline = require("windline")
 local helper = require("windline.helpers")
 local b_components = require("windline.components.basic")
-local gps = require("nvim-gps")
 local state = _G.WindLine.state
-gps.setup()
 
 local lsp_comps = require("windline.components.lsp")
 local git_comps = require("windline.components.git")
@@ -66,8 +64,6 @@ basic.file = {
         if width > breakpoint_width then
             return {
                 { b_components.cache_file_name("[No Name]", "unique"), "magenta" },
-                { " ", "" },
-                { gps.get_location(), "white" },
                 { b_components.line_col_lua, "white" },
                 { b_components.progress_lua, "" },
                 { " ", "" },
