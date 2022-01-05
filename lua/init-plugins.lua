@@ -5,9 +5,19 @@ return require("packer").startup(function(use)
     -- lua functions
     use("nvim-lua/plenary.nvim")
     -- icons for other plugins
-    use("kyazdani42/nvim-web-devicons")
+    use({
+        "kyazdani42/nvim-web-devicons",
+        config = function()
+            require("nvim-web-devicons").setup({ default = true })
+        end,
+    })
     -- termial integration
-    use("akinsho/nvim-toggleterm.lua")
+    use({
+        "akinsho/nvim-toggleterm.lua",
+        config = function()
+            require("init-term")
+        end,
+    })
 
     -- auto completion
     use("hrsh7th/nvim-cmp")
@@ -18,7 +28,12 @@ return require("packer").startup(function(use)
     use("L3MON4D3/LuaSnip")
     use("saadparwaiz1/cmp_luasnip")
     -- lsp support
-    use("neovim/nvim-lspconfig")
+    use({
+        "neovim/nvim-lspconfig",
+        config = function()
+            require("init-lspconf")
+        end,
+    })
     -- null-ls for missing ls functionalities
     use({
         "jose-elias-alvarez/null-ls.nvim",
@@ -37,17 +52,35 @@ return require("packer").startup(function(use)
         end,
     })
     -- dap support
-    use("mfussenegger/nvim-dap")
-    use("rcarriga/nvim-dap-ui")
-    use("theHamsta/nvim-dap-virtual-text")
+    use({
+        "rcarriga/nvim-dap-ui",
+        config = function()
+            require("init-dap")
+        end,
+        requires = { { "mfussenegger/nvim-dap" }, { "theHamsta/nvim-dap-virtual-text" } },
+    })
     -- treesitter config
-    use("nvim-treesitter/nvim-treesitter")
+    use({
+        "nvim-treesitter/nvim-treesitter",
+        config = function()
+            require("init-treesitter")
+        end,
+    })
     -- auto pairs
     use("windwp/nvim-autopairs")
     -- auto tags
     use("windwp/nvim-ts-autotag")
     -- surround with
-    use("blackCauldron7/surround.nvim")
+    use({
+        "blackCauldron7/surround.nvim",
+        config = function()
+            require("surround").setup({
+                mappings_style = "surround",
+                map_insert_mode = false,
+            })
+            vim.api.nvim_del_keymap("v", "s")
+        end,
+    })
     -- comment
     use({
         "numToStr/Comment.nvim",
@@ -56,7 +89,12 @@ return require("packer").startup(function(use)
         end,
     })
     -- indent
-    use("lukas-reineke/indent-blankline.nvim")
+    use({
+        "lukas-reineke/indent-blankline.nvim",
+        config = function()
+            require("init-indent")
+        end,
+    })
 
     -- color scheme
     use({
@@ -66,7 +104,12 @@ return require("packer").startup(function(use)
         end,
     })
     -- status line
-    use("windwp/windline.nvim")
+    use({
+        "windwp/windline.nvim",
+        config = function()
+            require("init-windline")
+        end,
+    })
     -- clickable buffer line
     use({
         "akinsho/nvim-bufferline.lua",
@@ -75,7 +118,12 @@ return require("packer").startup(function(use)
         end,
     })
     -- git integration
-    use("lewis6991/gitsigns.nvim")
+    use({
+        "lewis6991/gitsigns.nvim",
+        config = function()
+            require("init-gitsigns")
+        end,
+    })
     -- which-key
     use({
         "folke/which-key.nvim",
@@ -85,9 +133,19 @@ return require("packer").startup(function(use)
     })
 
     -- file explorer
-    use("kyazdani42/nvim-tree.lua")
+    use({
+        "kyazdani42/nvim-tree.lua",
+        config = function()
+            require("init-tree")
+        end,
+    })
     -- fuzzy finder
-    use("nvim-telescope/telescope.nvim")
+    use({
+        "nvim-telescope/telescope.nvim",
+        config = function()
+            require("init-telescope")
+        end,
+    })
     -- media file preview extension for telescope
     use("nvim-telescope/telescope-media-files.nvim")
 end)
