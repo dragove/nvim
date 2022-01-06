@@ -1,6 +1,12 @@
 return require("packer").startup(function(use)
     -- package manager
     use("wbthomason/packer.nvim")
+    -- use({
+    --     "lewis6991/impatient.nvim",
+    --     config = function()
+    --         require("impatient")
+    --     end,
+    -- })
 
     -- lua functions
     use("nvim-lua/plenary.nvim")
@@ -20,7 +26,12 @@ return require("packer").startup(function(use)
     })
 
     -- auto completion
-    use("hrsh7th/nvim-cmp")
+    use({
+        "hrsh7th/nvim-cmp",
+        config = function()
+            require("init-cmp")
+        end,
+    })
     use("hrsh7th/cmp-path")
     use("hrsh7th/cmp-buffer")
     use("hrsh7th/cmp-nvim-lsp")
