@@ -18,6 +18,22 @@ local fmta = require("luasnip.extras.fmt").fmta
 local types = require("luasnip.util.types")
 local conds = require("luasnip.extras.expand_conditions")
 
+local function init_expand(args, _, old_state)
+    local nodes = {}
+    if not old_state then
+        old_state = {}
+    end
+
+    -- count placeholders in string
+    for s in string.match(args[1][1], "([^,]+)") do
+        nodes.insert(t({"self.", s, " = ", s}))
+    end
+
+    local snip = sn(nil, nodes)
+    snip.old_state = old_state
+    return snip
+end
+
 return {
     -- print function
     s("print", {
@@ -33,4 +49,11 @@ return {
         t({ ":", "\t" }),
         i(0, "pass"),
     }),
+    -- class init generation
+    s("definit", {
+        t("def __init__(self, "),
+        i(1),
+        t({") -> None:", ""}),
+        d(2, init_expand, 1),
+    })
 }
