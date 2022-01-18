@@ -18,13 +18,9 @@ local fmta = require("luasnip.extras.fmt").fmta
 local types = require("luasnip.util.types")
 local conds = require("luasnip.extras.expand_conditions")
 
-local function init_expand(args, _, old_state)
+local function init_expand(args, _, _)
     local nodes = {}
-    if not old_state then
-        old_state = {}
-    end
 
-    -- count placeholders in string
     for field in args[1][1]:gmatch('([^,]+)') do
         field = field:gsub("^%s+", "")
         table.insert(nodes, t("\tself."))
@@ -34,7 +30,6 @@ local function init_expand(args, _, old_state)
     end
 
     local snip = sn(nil, nodes)
-    snip.old_state = old_state
     return snip
 end
 
