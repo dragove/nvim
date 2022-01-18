@@ -21,12 +21,12 @@ local conds = require("luasnip.extras.expand_conditions")
 local function init_expand(args, _, _)
     local nodes = {}
 
-    for field in args[1][1]:gmatch('([^,]+)') do
+    for field in args[1][1]:gmatch("([^,]+)") do
         field = field:gsub("^%s+", "")
         table.insert(nodes, t("\tself."))
         table.insert(nodes, t(field))
         table.insert(nodes, t(" = "))
-        table.insert(nodes, t({field, ""}))
+        table.insert(nodes, t({ field, "" }))
     end
 
     local snip = sn(nil, nodes)
@@ -52,7 +52,7 @@ return {
     s("definit", {
         t("def __init__(self, "),
         i(1),
-        t({") -> None:", ""}),
+        t({ ") -> None:", "" }),
         d(2, init_expand, 1),
-    })
+    }),
 }
