@@ -25,8 +25,12 @@ local function init_expand(args, _, old_state)
     end
 
     -- count placeholders in string
-    for s in string.match(args[1][1], "([^,]+)") do
-        nodes.insert(t({"self.", s, " = ", s}))
+    for field in args[1][1]:gmatch('([^,]+)') do
+        field = field:gsub("^%s+", "")
+        table.insert(nodes, t("\tself."))
+        table.insert(nodes, t(field))
+        table.insert(nodes, t(" = "))
+        table.insert(nodes, t({field, ""}))
     end
 
     local snip = sn(nil, nodes)
