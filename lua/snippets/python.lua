@@ -22,8 +22,7 @@ local function init_expand(args, _, _)
     local nodes = {}
 
     for field in args[1][1]:gmatch("([^,]+)") do
-        field = field:sub(field:find("([^:]+)"))
-        field = field:match("^%s*(.-)%s*$")
+        field = field:match("(%a+):?.-$"):match("^%s*(.-)%s*$")
         table.insert(nodes, t("\tself."))
         table.insert(nodes, t(field))
         table.insert(nodes, t(" = "))
