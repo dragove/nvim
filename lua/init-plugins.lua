@@ -1,12 +1,6 @@
 return require("packer").startup(function(use)
     -- package manager
     use("wbthomason/packer.nvim")
-    -- use({
-    --     "lewis6991/impatient.nvim",
-    --     config = function()
-    --         require("impatient")
-    --     end,
-    -- })
 
     -- lua functions
     use("nvim-lua/plenary.nvim")
@@ -110,10 +104,12 @@ return require("packer").startup(function(use)
     -- color scheme
     use({
         "olimorris/onedarkpro.nvim",
+        event = "BufEnter",
         config = function()
             require("init-theme")
         end,
     })
+
     -- status line
     use({
         "windwp/windline.nvim",
