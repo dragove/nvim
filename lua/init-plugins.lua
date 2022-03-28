@@ -75,17 +75,6 @@ return require("packer").startup(function(use)
     use("windwp/nvim-autopairs")
     -- auto tags
     use("windwp/nvim-ts-autotag")
-    -- surround with
-    use({
-        "blackCauldron7/surround.nvim",
-        config = function()
-            require("surround").setup({
-                mappings_style = "surround",
-                map_insert_mode = false,
-            })
-            vim.api.nvim_del_keymap("v", "s")
-        end,
-    })
     -- comment
     use({
         "numToStr/Comment.nvim",
