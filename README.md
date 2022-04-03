@@ -6,8 +6,7 @@
 2. [bat](https://github.com/sharkdp/bat) for preview text in telescope search dialog
 3. [fd](https://github.com/sharkdp/fd) for find files by file name
 4. [ripgrep](https://github.com/BurntSushi/ripgrep) for find files by contents in files
-5. [Überzug](https://github.com/seebye/ueberzug) for images preview.
-6. patched fonts. (e.g. [nerd-fonts](https://github.com/ryanoasis/nerd-fonts))
+5. patched fonts. (e.g. [nerd-fonts](https://github.com/ryanoasis/nerd-fonts))
 
 ## Installation
 
@@ -24,9 +23,9 @@ I'm currently using Archlinux with [paru](https://github.com/Morganamilo/paru) a
 
 ```shell
 sudo pacman -S clang
+sudo pacman -S pyright
+sudo pacman -S lua-language-server
 sudo pacman -S bash-language-server
-paru -S pyright
-paru -S lua-language-server
 paru -S jdtls
 ```
 
