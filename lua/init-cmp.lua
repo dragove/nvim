@@ -9,7 +9,7 @@ cmp.setup({
             luasnip.lsp_expand(args.body)
         end,
     },
-    mapping = {
+    mapping = cmp.mapping.preset.insert({
         ["<C-p>"] = cmp.mapping.select_prev_item(),
         ["<C-n>"] = cmp.mapping.select_next_item(),
         ["<C-Space>"] = cmp.mapping.complete(),
@@ -41,13 +41,13 @@ cmp.setup({
                 fallback()
             end
         end, { "i", "s" }),
-    },
-    sources = {
+    }),
+    sources = cmp.config.sources({
         { name = "luasnip" },
         { name = "nvim_lsp" },
         { name = "buffer" },
         { name = "path" },
-    },
+    }),
 })
 
 require("nvim-autopairs").setup()
