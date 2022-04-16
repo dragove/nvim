@@ -1,0 +1,11 @@
+[*]
+# Using Unix style
+end_of_line = lf
+# use 4 space as tab size
+tab_width = 4
+indent_size = 4
+# use space as indent
+indent_style = space
+[*.lua]
+quote_style = double
+call_arg_parentheses = keep
