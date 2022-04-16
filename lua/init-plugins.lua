@@ -18,6 +18,15 @@ return require("packer").startup(function(use)
             require("init-term")
         end,
     })
+    -- notification manager
+    use({
+        "rcarriga/nvim-notify",
+        config = function()
+            vim.notify = require("notify")
+            -- hardcoded background color
+            vim.notify.setup({background_colour = "#282c34"})
+        end
+    })
 
     -- auto completion
     use({
