@@ -24,7 +24,7 @@ return require("packer").startup(function(use)
         config = function()
             vim.notify = require("notify")
             -- hardcoded background color
-            vim.notify.setup({background_colour = "#282c34"})
+            vim.notify.setup({ background_colour = "#282c34" })
         end
     })
 
@@ -88,12 +88,16 @@ return require("packer").startup(function(use)
     use("windwp/nvim-ts-autotag")
     -- comment
     use({
-        "numToStr/Comment.nvim",
+        "terrortylor/nvim-comment",
         config = function()
-            require("Comment").setup()
+            require("nvim_comment").setup({
+                hook = function()
+                    require("ts_context_commentstring.internal").update_commentstring()
+                end,
+            })
         end,
+        requires = { { "JoosepAlviste/nvim-ts-context-commentstring" } }
     })
-    -- indent
     use({
         "lukas-reineke/indent-blankline.nvim",
         config = function()

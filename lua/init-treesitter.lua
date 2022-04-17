@@ -8,9 +8,12 @@ require("nvim-treesitter.configs").setup({
         "lua",
         "html",
         "css",
+        "scss",
         "javascript",
         "typescript",
         "tsx",
+        "vue",
+        "svelte",
         "json",
         "json5",
         "jsonc",
@@ -23,6 +26,10 @@ require("nvim-treesitter.configs").setup({
     -- auto tag with nvim-ts-autotag
     autotag = { enable = true },
     highlight = { enable = true },
+    context_commentstring = {
+        enable = true,
+        enable_autocmd = false
+    }
 })
 
 vim.o.foldmethod = "expr"
