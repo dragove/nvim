@@ -67,6 +67,8 @@ return require("packer").startup(function(use)
             require("init-jdtls")
         end,
     })
+    -- symbol outline by lsp
+    use("simrat39/symbols-outline.nvim")
     -- dap support
     use({
         "rcarriga/nvim-dap-ui",
