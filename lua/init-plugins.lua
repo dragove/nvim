@@ -4,6 +4,8 @@ return require("packer").startup(function(use)
 
     -- lua functions
     use("nvim-lua/plenary.nvim")
+    -- neovim ui components
+    use("MunifTanjim/nui.nvim")
     -- icons for other plugins
     use({
         "kyazdani42/nvim-web-devicons",
@@ -147,7 +149,8 @@ return require("packer").startup(function(use)
 
     -- file explorer
     use({
-        "kyazdani42/nvim-tree.lua",
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v2.x",
         config = function()
             require("init-tree")
         end,
