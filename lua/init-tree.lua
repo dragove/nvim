@@ -68,7 +68,7 @@ require("neo-tree").setup({
             nowait = true,
         },
         mappings = {
-            ["o"] = "open",
+            ["o"] = "midfinger_open",
             ["l"] = "open",
             ["<cr>"] = "open",
             ["<2-LeftMouse>"] = "open",
@@ -97,6 +97,18 @@ require("neo-tree").setup({
     },
     nesting_rules = {},
     filesystem = {
+        commands = {
+            midfinger_open = function(state)
+                local node = state.tree:get_node()
+                if require("neo-tree.utils").is_expandable(node) then
+                    state.commands["toggle_node"](state)
+                else
+                    state.commands["open"](state)
+                    state.commands["close_window"](state)
+                    vim.cmd("normal! M")
+                end
+            end
+        },
         filtered_items = {
             visible = false,
             hide_dotfiles = true,
