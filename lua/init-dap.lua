@@ -1,21 +1,16 @@
-local dap = require("dap")
+local dap = require(("dap"))
 require("dapui").setup()
 require("nvim-dap-virtual-text").setup()
 
-local opts = { noremap = true, silent = true }
-
-vim.api.nvim_set_keymap("n", "<F5>", '<CMD>lua require"dap".continue()<CR>', opts)
-vim.api.nvim_set_keymap("n", "<F7>", '<CMD>lua require"dap".step_into()<CR>', opts)
-vim.api.nvim_set_keymap("n", "<F8>", '<CMD>lua require"dap".step_over()<CR>', opts)
-vim.api.nvim_set_keymap("n", "<S-F8>", '<CMD>lua require"dap".step_out()<CR>', opts)
-vim.api.nvim_set_keymap("n", "<Leader>db", '<CMD>lua require"dap".toggle_breakpoint()<CR>', opts)
-vim.api.nvim_set_keymap(
-    "n",
-    "<Leader>dB",
-    '<CMD>lua require"dap".set_breakpoint(vim.fn.input("Breakpoint condition: "))<CR>',
-    opts
-)
-vim.api.nvim_set_keymap("n", "<Leader>dr", '<CMD>lua require"dapui".toggle()<CR>', opts)
+vim.keymap.set("n", "<F5>", require("dap").continue)
+vim.keymap.set("n", "<F7>", require("dap").step_into)
+vim.keymap.set("n", "<F8>", require("dap").step_over)
+vim.keymap.set("n", "<S-F8>", require("dap").step_out)
+vim.keymap.set("n", "<Leader>db", require("dap").toggle_breakpoint)
+vim.keymap.set("n", "<Leader>dB", function()
+    require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))
+end)
+vim.keymap.set("n", "<Leader>dr", require "dapui".toggle)
 
 dap.adapters.python = {
     type = "executable",
