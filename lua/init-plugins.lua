@@ -6,6 +6,7 @@ return require("packer").startup(function(use)
     use("nvim-lua/plenary.nvim")
     -- neovim ui components
     use("MunifTanjim/nui.nvim")
+    use('stevearc/dressing.nvim')
     -- icons for other plugins
     use({
         "kyazdani42/nvim-web-devicons",
@@ -53,14 +54,13 @@ return require("packer").startup(function(use)
         end,
     })
     -- null-ls for missing ls functionalities
-    use({
-        "jose-elias-alvarez/null-ls.nvim",
-        config = function()
-            require("init-null-ls")
-        end,
-    })
-    -- lsp UI staffs
-    use("tami5/lspsaga.nvim")
+    -- disable null-ls tempoaraly
+    -- use({
+    --     "jose-elias-alvarez/null-ls.nvim",
+    --     config = function()
+    --         require("init-null-ls")
+    --     end,
+    -- })
     -- java lsp
     use({
         "mfussenegger/nvim-jdtls",
