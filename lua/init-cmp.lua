@@ -15,7 +15,8 @@ cmp.setup({
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<C-e>"] = cmp.mapping.close(),
         ["<CR>"] = cmp.mapping.confirm({
-            select = true,
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = false
         }),
         ["<C-j>"] = cmp.mapping(function()
             luasnip.jump(1)
