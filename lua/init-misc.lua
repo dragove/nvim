@@ -38,6 +38,8 @@ vim.o.cursorline = true
 vim.o.wrap = false
 -- Do not fold on default
 vim.o.foldenable = false
+-- Add scrolloff for better zt/zb
+vim.o.scrolloff = 3
 -- Show sign column (e.g. lsp Error sign)
 vim.o.signcolumn = "yes"
 -- Better completion
