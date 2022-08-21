@@ -6,7 +6,7 @@ return require("packer").startup(function(use)
     use("nvim-lua/plenary.nvim")
     -- neovim ui components
     use("MunifTanjim/nui.nvim")
-    use('stevearc/dressing.nvim')
+    use("stevearc/dressing.nvim")
     -- icons for other plugins
     use({
         "kyazdani42/nvim-web-devicons",
@@ -149,11 +149,11 @@ return require("packer").startup(function(use)
 
     -- file explorer
     use({
-        "nvim-neo-tree/neo-tree.nvim",
-        branch = "v2.x",
+        "kyazdani42/nvim-tree.lua",
         config = function()
             require("init-tree")
         end,
+        requires = { { "kyazdani42/nvim-web-devicons" } }
     })
     -- fuzzy finder
     use({
