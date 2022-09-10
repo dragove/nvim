@@ -31,6 +31,15 @@ return require("packer").startup(function(use)
         end
     })
 
+    -- surround support
+    use({
+        "kylechui/nvim-surround",
+        tag = "*",
+        config = function()
+            require("nvim-surround").setup({})
+        end
+    })
+
     -- auto completion
     use({
         "hrsh7th/nvim-cmp",
