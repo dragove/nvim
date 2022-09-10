@@ -31,7 +31,7 @@ vim.o.softtabstop = 4
 vim.o.smartindent = true
 vim.o.expandtab = true
 -- Show line number
-vim.o.number = true
+vim.o.relativenumber = true
 -- Highlight current line number
 vim.o.cursorline = true
 -- Display long text in one line

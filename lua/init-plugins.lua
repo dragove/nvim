@@ -86,10 +86,14 @@ return require("packer").startup(function(use)
             require("init-treesitter")
         end,
     })
+    -- better lisp editing
+    use("eraserhd/parinfer-rust")
     -- auto pairs
     use("windwp/nvim-autopairs")
     -- auto tags
     use("windwp/nvim-ts-autotag")
+    -- rainbow
+    use("p00f/nvim-ts-rainbow")
     -- comment
     use({
         "terrortylor/nvim-comment",
