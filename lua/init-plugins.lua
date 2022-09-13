@@ -79,7 +79,10 @@ return require("packer").startup(function(use)
         end,
     })
     -- symbol outline by lsp
-    use("simrat39/symbols-outline.nvim")
+    use({ "simrat39/symbols-outline.nvim",
+        config = function()
+            require("symbols-outline").setup({})
+        end, })
     -- dap support
     use({
         "rcarriga/nvim-dap-ui",
