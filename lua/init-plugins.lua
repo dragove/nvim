@@ -5,8 +5,8 @@ return require("packer").startup(function(use)
     -- lua functions
     use("nvim-lua/plenary.nvim")
     -- neovim ui components
-    use("MunifTanjim/nui.nvim")
-    use("stevearc/dressing.nvim")
+    -- use("MunifTanjim/nui.nvim")
+    -- use("stevearc/dressing.nvim")
     -- icons for other plugins
     use({
         "kyazdani42/nvim-web-devicons",
@@ -83,7 +83,8 @@ return require("packer").startup(function(use)
     use({ "simrat39/symbols-outline.nvim",
         config = function()
             require("symbols-outline").setup({})
-        end, })
+        end,
+    })
     -- dap support
     use({
         "rcarriga/nvim-dap-ui",
