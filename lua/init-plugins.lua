@@ -63,6 +63,10 @@ return require("packer").startup(function(use)
             require("init-lspconf")
         end,
     })
+    use({
+        "glepnir/lspsaga.nvim",
+        branch = "main"
+    })
     -- null-ls for missing ls functionalities
     -- disable null-ls tempoaraly
     -- use({

@@ -1,5 +1,9 @@
+local jdtls = require("jdtls")
 local on_attach = function(_, bufnr)
-    local opts = { buffer = bufnr }
+    jdtls.setup.add_commands()
+    jdtls.setup_dap()
+    vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+    local opts = { noremap = true, silent = true, buffer = bufnr }
     vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
     vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
@@ -12,36 +16,35 @@ local on_attach = function(_, bufnr)
     end, opts)
     vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, opts)
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-    vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+    vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references, opts)
     vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
     vim.keymap.set("n", "<leader>so", require("telescope.builtin").lsp_document_symbols, opts)
-    vim.keymap.set("n", "<space>f", vim.lsp.buf.formatting, opts)
+    vim.keymap.set("n", "<space>f", function() vim.lsp.buf.format { async = true } end, opts)
 end
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local home = os.getenv("HOME")
 local root_markers = { "gradlew", "pom.xml", "mavenw", ".git" }
-local root_dir = require("jdtls.setup").find_root(root_markers)
-local workspace_folder = home .. "/Workspace/Java/.workspace" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
+local root_dir = jdtls.setup.find_root(root_markers)
+local workspace_folder = home .. "/Workspace/Java/.workspace/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
 
 local config = {
     cmd = {
         "jdtls",
-        "-Dlog.protocol=true",
-        "-Dlog.level=ALL",
-        "--add-modules=ALL-SYSTEM",
-        "--add-opens",
-        "java.base/java.util=ALL-UNNAMED",
-        "--add-opens",
-        "java.base/java.lang=ALL-UNNAMED",
         "-data",
         workspace_folder,
     },
+    flags = {
+        allow_incremental_sync = true,
+    };
     on_attach = on_attach,
     capabilities = capabilities,
     root_dir = root_dir,
     settings = {
-        java = {},
+        java = {
+            signatureHelp = { enabled = true },
+            completion = { importOrder = { "java", "javax", "org", "com" } },
+        }
     },
 }
-require("jdtls").start_or_attach(config)
+jdtls.start_or_attach(config)
