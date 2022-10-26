@@ -118,6 +118,8 @@ return require("packer").startup(function(use)
             require("init-treesitter")
         end,
     })
+    -- automatic highlight current symbol
+    use("RRethy/vim-illuminate")
     -- better matchup which can be intergreted to treesitter
     use("andymass/vim-matchup")
     -- show scope
