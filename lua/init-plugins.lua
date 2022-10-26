@@ -40,6 +40,14 @@ return require("packer").startup(function(use)
         end
     })
 
+    -- markdown support
+    use({
+        "preservim/vim-markdown",
+        requires = {
+            { "godlygeek/tabular" }
+        }
+    })
+
     -- auto completion
     use({
         "hrsh7th/nvim-cmp",
