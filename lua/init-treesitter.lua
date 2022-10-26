@@ -27,6 +27,7 @@ require("nvim-treesitter.configs").setup({
     -- auto tag with nvim-ts-autotag
     autotag = { enable = true },
     highlight = { enable = true },
+    matchup = { enable = true },
     rainbow = {
         enable = true,
         extended_mode = true,
@@ -35,7 +36,7 @@ require("nvim-treesitter.configs").setup({
     context_commentstring = {
         enable = true,
         enable_autocmd = false
-    }
+    },
 })
 
 vim.o.foldmethod = "expr"

@@ -5,7 +5,6 @@ saga.init_lsp_saga()
 
 local opts = { noremap = true, silent = true }
 
-vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, opts)
 vim.keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
 vim.keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
 -- Only jump to error
@@ -15,9 +14,10 @@ end, { silent = true })
 vim.keymap.set("n", "]D", function()
     require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
 end, { silent = true })
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, opts)
--- Outline
-vim.keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", { silent = true })
+-- Code Quickfix
+vim.keymap.set("n", "<leader>cq", vim.diagnostic.setloclist, opts)
+-- Code Outline
+vim.keymap.set("n", "<leader>co", "<cmd>LSoutlineToggle<CR>", { silent = true })
 
 local on_attach = function(_, bufnr)
     vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
@@ -38,7 +38,7 @@ local on_attach = function(_, bufnr)
     vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references, bufopts)
     vim.keymap.set({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>", bufopts)
     vim.keymap.set("n", "<leader>so", require("telescope.builtin").lsp_document_symbols, bufopts)
-    vim.keymap.set("n", "<space>f", function() vim.lsp.buf.format { async = true } end, bufopts)
+    vim.keymap.set("n", "<leader>cf", function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()

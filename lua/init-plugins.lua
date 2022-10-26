@@ -4,9 +4,6 @@ return require("packer").startup(function(use)
 
     -- lua functions
     use("nvim-lua/plenary.nvim")
-    -- neovim ui components
-    -- use("MunifTanjim/nui.nvim")
-    -- use("stevearc/dressing.nvim")
     -- icons for other plugins
     use({
         "kyazdani42/nvim-web-devicons",
@@ -28,6 +25,15 @@ return require("packer").startup(function(use)
             vim.notify = require("notify")
             -- hardcoded background color
             vim.notify.setup({ background_colour = "#282c34" })
+        end
+    })
+
+    -- easymotion like plugin
+    use({
+        "phaazon/hop.nvim",
+        branch = "v2",
+        config = function()
+            require("init-hop")
         end
     })
 
@@ -112,6 +118,10 @@ return require("packer").startup(function(use)
             require("init-treesitter")
         end,
     })
+    -- better matchup which can be intergreted to treesitter
+    use("andymass/vim-matchup")
+    -- show scope
+    use("nvim-treesitter/nvim-treesitter-context")
     -- better lisp editing
     use("eraserhd/parinfer-rust")
     -- auto pairs
