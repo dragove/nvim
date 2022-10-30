@@ -22,14 +22,15 @@ local on_attach = function(_, bufnr)
     require("lsp_signature").on_attach(signature_setup, bufnr)
 end
 
+local home = os.getenv("HOME")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
-local workspace_dir = "/home/dove/Workspace/java/.workspace/" .. project_name
+local workspace_dir = home .. "/Workspace/java/.workspace/" .. project_name
 local config = {
     cmd = { "jdtls", "-data", workspace_dir },
     on_attach = on_attach,
     capabilities = capabilities,
-    root_dir = vim.fs.dirname(vim.fs.find({ ".gradlew", ".git", "mvnw" }, { upward = true })[1]),
+    root_dir = vim.fs.dirname(vim.fs.find({ ".gradlew", ".git", "mvnw", "pom.xml" }, { upward = true })[1]),
 }
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "java",
