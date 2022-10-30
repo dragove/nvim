@@ -1,7 +1,11 @@
 local nvim_lsp = require("lspconfig")
 local saga = require("lspsaga")
 
-saga.init_lsp_saga()
+saga.init_lsp_saga({
+    symbol_in_winbar = {
+        in_custom = true
+    }
+})
 
 local opts = { noremap = true, silent = true }
 
@@ -39,11 +43,13 @@ local on_attach = function(_, bufnr)
     vim.keymap.set({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>", bufopts)
     vim.keymap.set("n", "<leader>so", require("telescope.builtin").lsp_document_symbols, bufopts)
     vim.keymap.set("n", "<leader>cf", function() vim.lsp.buf.format { async = true } end, bufopts)
+
+    require("lsp_signature").on_attach(signature_setup, bufnr)
 end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-local servers = { "clangd", "pylsp", "gopls", "tsserver", "bashls" }
+local servers = { "clangd", "pylsp", "gopls", "tsserver", "bashls", "jdtls" }
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup({
         on_attach = on_attach,

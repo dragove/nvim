@@ -81,35 +81,25 @@ return require("packer").startup(function(use)
         "glepnir/lspsaga.nvim",
         branch = "main"
     })
+    use("ray-x/lsp_signature.nvim")
     -- null-ls for missing ls functionalities
-    -- disable null-ls tempoaraly
-    -- use({
-    --     "jose-elias-alvarez/null-ls.nvim",
-    --     config = function()
-    --         require("init-null-ls")
-    --     end,
-    -- })
-    -- java lsp
     use({
-        "mfussenegger/nvim-jdtls",
-        ft = { "java" },
+        "jose-elias-alvarez/null-ls.nvim",
         config = function()
-            require("init-jdtls")
+            require("init-null-ls")
         end,
     })
-    -- symbol outline by lsp
-    use({ "simrat39/symbols-outline.nvim",
-        config = function()
-            require("symbols-outline").setup({})
-        end,
-    })
+    -- java lsp
     -- dap support
     use({
         "rcarriga/nvim-dap-ui",
         config = function()
             require("init-dap")
         end,
-        requires = { { "mfussenegger/nvim-dap" }, { "theHamsta/nvim-dap-virtual-text" } },
+        requires = {
+            { "mfussenegger/nvim-dap" },
+            { "theHamsta/nvim-dap-virtual-text" }
+        },
     })
     -- treesitter config
     use({
