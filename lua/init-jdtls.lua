@@ -25,7 +25,7 @@ end
 local home = os.getenv("HOME")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
-local workspace_dir = home .. "/Workspace/java/.workspace/" .. project_name
+local workspace_dir = home .. "/Workspace/Java/.workspace/" .. project_name
 local config = {
     cmd = { "jdtls", "-data", workspace_dir },
     on_attach = on_attach,
