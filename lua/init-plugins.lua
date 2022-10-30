@@ -90,6 +90,13 @@ return require("packer").startup(function(use)
         end,
     })
     -- java lsp
+    use({
+        "mfussenegger/nvim-jdtls",
+        ft = "java",
+        config = function()
+            require("init-jdtls")
+        end,
+    })
     -- dap support
     use({
         "rcarriga/nvim-dap-ui",
