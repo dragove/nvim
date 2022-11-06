@@ -33,10 +33,5 @@ paru -S jdtls
 
 I'ved added `eraserhd/parinfer-rust` to `init-plugins.lua`, this plugin should be compiled manually to work.
 
-To compile it, you should install a `rust` environment, and after `PackerSync`, do the following step
-
-```bash
-cd ~/.local/share/nvim/site/pack/packer/start/parinfer-rust/
-cargo build --release
-```
+To compile it, you should install a `rust` environment with `cargo`, then run `PackerSync`.
 

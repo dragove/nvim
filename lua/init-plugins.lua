@@ -122,7 +122,10 @@ return require("packer").startup(function(use)
     -- show scope
     use("nvim-treesitter/nvim-treesitter-context")
     -- better lisp editing
-    use("eraserhd/parinfer-rust")
+    use({
+        "eraserhd/parinfer-rust",
+        run = "cargo build --release"
+    })
     -- auto pairs
     use("windwp/nvim-autopairs")
     -- auto tags
