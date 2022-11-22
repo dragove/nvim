@@ -2,7 +2,7 @@
 
 ## Prerequisite
 
-1. [neovim](https://github.com/neovim/neovim) 0.5 for lua support and native-lsp support
+1. [neovim](https://github.com/neovim/neovim) 0.8 for some plugins
 2. [bat](https://github.com/sharkdp/bat) for preview text in telescope search dialog
 3. [fd](https://github.com/sharkdp/fd) for find files by file name
 4. [ripgrep](https://github.com/BurntSushi/ripgrep) for find files by contents in files
