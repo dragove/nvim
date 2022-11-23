@@ -28,12 +28,12 @@ return require("packer").startup(function(use)
         end
     })
 
-    -- easymotion like plugin
+    -- motion plugin
+    use("tpope/vim-repeat")
     use({
-        "phaazon/hop.nvim",
-        branch = "v2",
+        "ggandor/leap.nvim",
         config = function()
-            require("init-hop")
+            require('leap').add_default_mappings()
         end
     })
 
