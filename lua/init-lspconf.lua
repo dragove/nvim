@@ -1,11 +1,5 @@
 local nvim_lsp = require("lspconfig")
-local saga = require("lspsaga")
-
-saga.init_lsp_saga({
-    symbol_in_winbar = {
-        in_custom = true
-    }
-})
+require("lspsaga").setup({})
 
 local opts = { noremap = true, silent = true }
 

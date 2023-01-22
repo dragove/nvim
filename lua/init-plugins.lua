@@ -1,66 +1,73 @@
-return require("packer").startup(function(use)
-    -- package manager
-    use("wbthomason/packer.nvim")
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
+end
+vim.opt.rtp:prepend(lazypath)
 
+require("lazy").setup({
     -- lua functions
-    use("nvim-lua/plenary.nvim")
+    "nvim-lua/plenary.nvim",
     -- icons for other plugins
-    use({
+    {
         "kyazdani42/nvim-web-devicons",
         config = function()
             require("nvim-web-devicons").setup({ default = true })
         end,
-    })
+    },
     -- termial integration
-    use({
+    {
         "akinsho/nvim-toggleterm.lua",
         config = function()
             require("init-term")
         end,
-    })
+    },
     -- notification manager
-    use({
+    {
         "rcarriga/nvim-notify",
         config = function()
             vim.notify = require("notify")
             -- hardcoded background color
             vim.notify.setup({ background_colour = "#282c34" })
         end
-    })
+    },
 
     -- motion plugin
-    use("tpope/vim-repeat")
-    use({
+    "tpope/vim-repeat",
+    {
         "ggandor/leap.nvim",
         config = function()
-            require('leap').add_default_mappings()
+            require("leap").add_default_mappings()
         end
-    })
+    },
 
     -- surround support
-    use({
+    {
         "kylechui/nvim-surround",
-        tag = "*",
         config = function()
             require("nvim-surround").setup({})
         end
-    })
+    },
 
     -- markdown support
-    use({
-        "preservim/vim-markdown",
-        requires = {
-            { "godlygeek/tabular" }
-        }
-    })
+    {
+        "toppair/peek.nvim",
+        build = "deno task --quiet build:fast"
+    },
 
     -- auto completion
-    use({
+    {
         "hrsh7th/nvim-cmp",
         config = function()
             require("init-cmp")
         end,
-        requires = {
+        dependencies = {
             { "hrsh7th/cmp-path" },
             { "hrsh7th/cmp-buffer" },
             { "hrsh7th/cmp-cmdline" },
@@ -69,71 +76,71 @@ return require("packer").startup(function(use)
             { "L3MON4D3/LuaSnip" },
             { "saadparwaiz1/cmp_luasnip" }
         },
-    })
+    },
     -- lsp support
-    use({
+    {
         "neovim/nvim-lspconfig",
         config = function()
             require("init-lspconf")
         end,
-    })
-    use({
+    },
+    {
         "glepnir/lspsaga.nvim",
         branch = "main"
-    })
-    use("ray-x/lsp_signature.nvim")
+    },
+    "ray-x/lsp_signature.nvim",
     -- null-ls for missing ls functionalities
-    use({
+    {
         "jose-elias-alvarez/null-ls.nvim",
         config = function()
             require("init-null-ls")
         end,
-    })
+    },
     -- java lsp
-    use({
+    {
         "mfussenegger/nvim-jdtls",
         ft = "java",
         config = function()
             require("init-jdtls")
         end,
-    })
+    },
     -- dap support
-    use({
+    {
         "rcarriga/nvim-dap-ui",
         config = function()
             require("init-dap")
         end,
-        requires = {
+        dependencies = {
             { "mfussenegger/nvim-dap" },
             { "theHamsta/nvim-dap-virtual-text" }
         },
-    })
+    },
     -- treesitter config
-    use({
+    {
         "nvim-treesitter/nvim-treesitter",
         config = function()
             require("init-treesitter")
         end,
-    })
+    },
     -- automatic highlight current symbol
-    use("RRethy/vim-illuminate")
+    "RRethy/vim-illuminate",
     -- better matchup which can be intergreted to treesitter
-    use("andymass/vim-matchup")
+    "andymass/vim-matchup",
     -- show scope
-    use("nvim-treesitter/nvim-treesitter-context")
+    "nvim-treesitter/nvim-treesitter-context",
     -- better lisp editing
-    use({
+    {
         "eraserhd/parinfer-rust",
-        run = "cargo build --release"
-    })
+        build = "cargo build --release"
+    },
     -- auto pairs
-    use("windwp/nvim-autopairs")
+    "windwp/nvim-autopairs",
     -- auto tags
-    use("windwp/nvim-ts-autotag")
+    "windwp/nvim-ts-autotag",
     -- rainbow
-    use("p00f/nvim-ts-rainbow")
+    "p00f/nvim-ts-rainbow",
     -- comment
-    use({
+    {
         "terrortylor/nvim-comment",
         config = function()
             require("nvim_comment").setup({
@@ -142,68 +149,69 @@ return require("packer").startup(function(use)
                 end,
             })
         end,
-        requires = { { "JoosepAlviste/nvim-ts-context-commentstring" } }
-    })
-    use({
+        dependencies = { { "JoosepAlviste/nvim-ts-context-commentstring" } }
+    },
+    {
         "lukas-reineke/indent-blankline.nvim",
         config = function()
             require("init-indent")
         end,
-    })
+    },
 
     -- color scheme
-    use({
+    {
         "olimorris/onedarkpro.nvim",
         event = "BufEnter",
         config = function()
             require("init-theme")
         end,
-    })
+    },
 
     -- status line
-    use({
+    {
         "windwp/windline.nvim",
         config = function()
             require("init-windline")
         end,
-    })
+    },
     -- clickable buffer line
-    use({
+    {
         "akinsho/nvim-bufferline.lua",
         config = function()
             require("bufferline").setup()
         end,
-    })
+    },
     -- git integration
-    use({
+    {
         "lewis6991/gitsigns.nvim",
         config = function()
             require("init-gitsigns")
         end,
-    })
+    },
     -- which-key
-    use({
+    {
         "folke/which-key.nvim",
         config = function()
             require("which-key").setup()
         end,
-    })
+    },
 
     -- file explorer
-    use({
+    {
         "kyazdani42/nvim-tree.lua",
         config = function()
             require("init-tree")
         end,
-        requires = { { "kyazdani42/nvim-web-devicons" } }
-    })
+        dependencies = { { "kyazdani42/nvim-web-devicons" } }
+    },
     -- fuzzy finder
-    use({
+    {
         "nvim-telescope/telescope.nvim",
         config = function()
             require("init-telescope")
         end,
-    })
+    },
     -- media file preview extension for telescope
-    use("nvim-telescope/telescope-media-files.nvim")
-end)
+    "nvim-telescope/telescope-media-files.nvim"
+
+})
