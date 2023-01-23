@@ -49,19 +49,9 @@ return {
     -- color scheme
     {
         "olimorris/onedarkpro.nvim",
-        event = "BufEnter",
         config = function()
             vim.cmd("colorscheme onedark")
-        end,
-    },
-
-    -- clickable buffer line
-    {
-        "akinsho/nvim-bufferline.lua",
-        config = {},
-        dependencies = {
-            "kyazdani42/nvim-web-devicons"
-        }
+        end
     },
 
     -- which-key
