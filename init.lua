@@ -1,2 +1,3 @@
-require("init-misc")
-require("init-plugins")
+require("core.options")
+require("core.autocmds")
+require("core.lazy")

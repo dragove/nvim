@@ -44,11 +44,3 @@ vim.o.scrolloff = 3
 vim.o.signcolumn = "yes"
 -- Better completion
 vim.o.completeopt = "menu,menuone,noselect"
-
--- Highlight on yank
-vim.cmd([[
-  augroup YankHighlight
-    autocmd!
-    autocmd TextYankPost * silent! lua vim.highlight.on_yank()
-  augroup end
-]])
