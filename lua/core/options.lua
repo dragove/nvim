@@ -17,6 +17,8 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_netrwSettings = 1
 
+-- no cmdheight
+vim.o.cmdheight = 0
 -- Split to the right in vsplit
 vim.o.splitright = true
 -- Split to the bottom in split

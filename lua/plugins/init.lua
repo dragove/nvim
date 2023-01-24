@@ -17,11 +17,6 @@ return {
         config = {}
     },
 
-    -- markdown support
-    {
-        "toppair/peek.nvim",
-        build = "deno task --quiet build:fast"
-    },
     -- automatic highlight current symbol
     "RRethy/vim-illuminate",
     -- better lisp editing
