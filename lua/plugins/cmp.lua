@@ -1,6 +1,7 @@
 -- auto completion
 return {
     "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
     config = function()
         -- load snippets made by luasnip
         require("snippets")
@@ -88,6 +89,6 @@ return {
         "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
         -- auto pairs
-        "nvim-autopairs",
+        "windwp/nvim-autopairs",
     },
 }

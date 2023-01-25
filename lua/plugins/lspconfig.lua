@@ -68,6 +68,6 @@ return {
         "j-hui/fidget.nvim",
         "folke/neodev.nvim",
         "hrsh7th/cmp-nvim-lsp",
-        "nvim-telescope/telescope.nvim",
+        "nvim-telescope/telescope.nvim"
     },
 }

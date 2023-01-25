@@ -1,6 +1,7 @@
 -- file explorer
 return {
     "kyazdani42/nvim-tree.lua",
+    keys = { "\\", mode = "n" },
     config = function()
         local tree = require("nvim-tree")
         tree.setup({

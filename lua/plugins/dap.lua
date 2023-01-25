@@ -1,6 +1,7 @@
 -- dap support
 return {
     "rcarriga/nvim-dap-ui",
+    keys = { "<Leader>dr", mode = "n" },
     config = function()
         local dap = require(("dap"))
         require("dapui").setup()

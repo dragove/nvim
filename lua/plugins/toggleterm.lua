@@ -1,6 +1,9 @@
 -- termial integration
 return {
     "akinsho/nvim-toggleterm.lua",
+    keys = {
+        { [[<c-\>]] }
+    },
     config = {
         size = 15,
         open_mapping = [[<c-\>]],

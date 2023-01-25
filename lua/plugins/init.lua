@@ -14,18 +14,21 @@ return {
     -- surround support
     {
         "kylechui/nvim-surround",
+        event = "BufRead",
         config = {}
     },
 
     -- automatic highlight current symbol
-    "RRethy/vim-illuminate",
+    {
+        "RRethy/vim-illuminate",
+        event = "BufRead"
+    },
     -- better lisp editing
     {
         "eraserhd/parinfer-rust",
+        ft = { "lisp", "scheme" },
         build = "cargo build --release"
     },
-    -- auto pairs
-    "windwp/nvim-autopairs",
     -- comment
     {
         "numToStr/Comment.nvim",
@@ -33,6 +36,7 @@ return {
     },
     {
         "lukas-reineke/indent-blankline.nvim",
+        event = "BufRead",
         config = function()
             require("indent_blankline").setup({
                 buftype_exclude = { "terminal", "nofile" },
@@ -51,6 +55,7 @@ return {
     -- which-key
     {
         "folke/which-key.nvim",
+        event = "BufWinEnter",
         config = function()
             require("which-key").setup()
         end,

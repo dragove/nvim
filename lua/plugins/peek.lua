@@ -1,6 +1,7 @@
 -- markdown support
 return {
     "toppair/peek.nvim",
+    ft = "markdown",
     config = function()
         -- default config:
         require("peek").setup({
