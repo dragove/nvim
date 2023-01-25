@@ -496,34 +496,6 @@ return {
                 },
             }
 
-            ---Return the status of the current session
-            local Session = {
-                condition = function(self) return (vim.g.persisting ~= nil) end,
-                {
-                    condition = function()
-                        return not conditions.buffer_matches({
-                            filetype = filetypes,
-                        })
-                    end,
-                    RightSlantStart,
-                    {
-                        provider = function(self)
-                            if vim.g.persisting then
-                                return "   "
-                            elseif vim.g.persisting == false then
-                                return "   "
-                            end
-                        end,
-                        hl = { fg = "gray", bg = "black" },
-                        on_click = {
-                            callback = function() vim.cmd("SessionToggle") end,
-                            name = "toggle_session",
-                        },
-                    },
-                    RightSlantEnd,
-                },
-            }
-
             -- Show plugin updates available from lazy.nvim
             local Lazy = {
                 condition = function()
@@ -587,7 +559,6 @@ return {
                 FileType,
                 FileEncoding,
                 GitBranch,
-                Session,
                 SearchResults,
                 Ruler,
             }

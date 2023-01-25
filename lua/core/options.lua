@@ -1,5 +1,6 @@
 -- setup space as leader key
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- Disable some default plugins
 vim.g.loaded_gzip = 1

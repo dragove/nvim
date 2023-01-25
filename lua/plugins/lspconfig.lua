@@ -7,8 +7,8 @@ return {
             local nmap = function(keys, func, desc)
                 vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
             end
-            nmap("[D", vim.diagnostic.goto_prev, "previous diagnostic")
-            nmap("]D", vim.diagnostic.goto_next, "next diagnostic")
+            nmap("[d", vim.diagnostic.goto_prev, "previous diagnostic")
+            nmap("]d", vim.diagnostic.goto_next, "next diagnostic")
             nmap("gD", vim.lsp.buf.declaration, "Go To Declaration")
             nmap("gd", vim.lsp.buf.definition, "Go To Definition")
             nmap("K", vim.lsp.buf.hover, "Document")
