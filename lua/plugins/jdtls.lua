@@ -25,15 +25,23 @@ return {
             vim.keymap.set("n", "<leader>cf", function() vim.lsp.buf.format { async = true } end, bufopts)
         end
 
-        local home = os.getenv("HOME")
         local capabilities = require("cmp_nvim_lsp").default_capabilities()
         local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
-        local workspace_dir = home .. "/Workspace/Java/.workspace/" .. project_name
+        -- calculate workspace dir
+        local workspace_dir = vim.fn.stdpath("data") .. "/site/java/workspace-root/" .. project_name
+          -- get the mason install path
+        local install_path = require("mason-registry").get_package("jdtls"):get_install_path()
+        -- local debug_install_path = require("mason-registry").get_package("java-debug-adapter"):get_install_path()
         local config = {
-            cmd = { "jdtls", "-data", workspace_dir },
+            cmd = {
+                install_path .. "/bin/jdtls",
+                "-javaagent:" .. install_path .. "/lombok.jar",
+                "-data",
+                workspace_dir
+            },
             on_attach = on_attach,
             capabilities = capabilities,
-            root_dir = vim.fs.dirname(vim.fs.find({ ".gradlew", ".git", "mvnw", "pom.xml" }, { upward = true })[1]),
+            root_dir = vim.fs.dirname(vim.fs.find({ ".gradlew", ".git", "mvnw", "pom.xml", "build.gradle" }, { upward = true })[1]),
         }
         vim.api.nvim_create_autocmd("FileType", {
             pattern = "java",

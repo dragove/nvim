@@ -86,19 +86,6 @@ return {
                     self.filename = vim.api.nvim_buf_get_name(self.bufnr)
                 end,
                 hl = "TabLine",
-                on_click = {
-                    callback = function(_, minwid, _, button)
-                        if (button == "m") then -- close on mouse middle click
-                            vim.api.nvim_buf_delete(minwid, { force = false })
-                        else
-                            vim.api.nvim_win_set_buf(0, minwid)
-                        end
-                    end,
-                    minwid = function(self)
-                        return self.bufnr
-                    end,
-                    name = "heirline_tabline_buffer_callback",
-                },
                 {
                     provider = function()
                         return "┃"

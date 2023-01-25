@@ -7,31 +7,18 @@
 3. [fd](https://github.com/sharkdp/fd) for find files by file name
 4. [ripgrep](https://github.com/BurntSushi/ripgrep) for find files by contents in files
 5. patched fonts. (e.g. [nerd-fonts](https://github.com/ryanoasis/nerd-fonts))
+6. `rustup` for rust-analyzer to work
+7. `cargo` for `parinfer-rust` plugin compile
+8. `deno` for `peek` plugin compile
+9. some lsp server installation by `Mason` needs package managers such as `npm` and `pip` or download tool such as `wget` and `curl`.
 
 ## Installation
 
-1. install packer.nvim via `git clone https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim`
-2. clone this repo to personal neovim config folder (e.g. $HOME/.config/nvim)
-3. launch neovim via command `nvim`
-4. invoke command `:PackerSync` in neovim and wait for plugin installings
-5. relaunch neovim and the treesitter plugin will automatically download all matained json files for better highlighting.
-6. for LSP supports, you need to install different lsp servers by yourself and add them to `init-lspconf.lua`
+1. clone this repo to personal neovim config folder (e.g. $HOME/.config/nvim)
+2. launch neovim via command `nvim`
 
-## LSP servers
+## Plugin List
 
-I'm currently using Archlinux with [paru](https://github.com/Morganamilo/paru) as my AUR helper. For installing language servers, you can use scripts below.
-
-```shell
-sudo pacman -S clang
-sudo pacman -S pyright
-sudo pacman -S lua-language-server
-sudo pacman -S bash-language-server
-paru -S jdtls
-```
-
-## Lisp/Scheme language support
-
-I'ved added `eraserhd/parinfer-rust` to `init-plugins.lua`, this plugin should be compiled manually to work.
-
-To compile it, you should install a `rust` environment with `cargo`, then run `PackerSync`.
+1. This config uses `lazy.nvim` as plugin manager for performance and convenience.
+2. use `mason` as lsp/dap server manager.
 
