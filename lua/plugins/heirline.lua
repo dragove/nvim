@@ -524,19 +524,6 @@ return {
                 },
             }
 
-            local Dap = {
-                condition = function()
-                    local session = require("dap").session()
-                    return session ~= nil
-                end,
-                provider = function() return "  " end,
-                on_click = {
-                    callback = function() require("dap").continue() end,
-                    name = "dap_continue",
-                },
-                hl = { fg = "red" },
-            }
-
             -- Show plugin updates available from lazy.nvim
             local Lazy = {
                 condition = function()
@@ -596,7 +583,6 @@ return {
 
                 -- Right
                 Align,
-                Dap,
                 Lazy,
                 FileType,
                 FileEncoding,

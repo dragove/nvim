@@ -32,6 +32,7 @@ return {
     -- comment
     {
         "numToStr/Comment.nvim",
+        keys = { "gc", "gb", { "gc", mode = "x" }, { "gb", mode = "x" } },
         config = {}
     },
     {
