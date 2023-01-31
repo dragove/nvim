@@ -1,8 +1,16 @@
 -- treesitter config
 return {
     "nvim-treesitter/nvim-treesitter",
-    event = "BufReadPre",
+    event = "BufRead",
     config = function()
+        local function disable_for_large_file(lang, bufnr, module)
+            local disabled = vim.api.nvim_buf_line_count(bufnr) > 7000;
+            if disabled then
+                print(module .. " is disabled in this buffer.")
+            end
+            return disabled
+        end
+
         require("nvim-treesitter.configs").setup({
             ensure_installed = {
                 "bash",

@@ -1,7 +1,7 @@
 -- lsp support with mason_lspconfig
 return {
     "neovim/nvim-lspconfig",
-    event = "BufReadPre",
+    event = "BufRead",
     config = function()
         local on_attach = function(_, bufnr)
             local nmap = function(keys, func, desc)

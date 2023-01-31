@@ -18,11 +18,6 @@ return {
         config = {}
     },
 
-    -- automatic highlight current symbol
-    {
-        "RRethy/vim-illuminate",
-        event = "BufRead"
-    },
     -- better lisp editing
     {
         "eraserhd/parinfer-rust",
@@ -35,15 +30,6 @@ return {
         keys = { "gc", "gb", { "gc", mode = "x" }, { "gb", mode = "x" } },
         config = {}
     },
-    {
-        "lukas-reineke/indent-blankline.nvim",
-        event = "BufRead",
-        config = function()
-            require("indent_blankline").setup({
-                buftype_exclude = { "terminal", "nofile" },
-            })
-        end,
-    },
 
     -- color scheme
     {
@@ -52,14 +38,4 @@ return {
             vim.cmd("colorscheme onedark")
         end
     },
-
-    -- which-key
-    {
-        "folke/which-key.nvim",
-        event = "BufWinEnter",
-        config = function()
-            require("which-key").setup()
-        end,
-    },
-
 }
