@@ -14,7 +14,6 @@ return {
     -- surround support
     {
         "kylechui/nvim-surround",
-        event = "BufRead",
         config = {}
     },
 

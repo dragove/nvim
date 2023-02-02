@@ -1,7 +1,6 @@
 -- treesitter config
 return {
     "nvim-treesitter/nvim-treesitter",
-    event = "BufRead",
     config = function()
         local function disable_for_large_file(lang, bufnr, module)
             local disabled = vim.api.nvim_buf_line_count(bufnr) > 7000;

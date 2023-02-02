@@ -1,7 +1,6 @@
 -- git integration
 return {
     "lewis6991/gitsigns.nvim",
-    event = "BufRead",
     config = {
         signs = {
             add = { hl = "GitSignsAdd", text = "│", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
