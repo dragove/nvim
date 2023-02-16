@@ -30,7 +30,6 @@ return {
                 cmd = {
                     install_path .. "/bin/jdtls",
                     "--jvm-arg=-javaagent:" .. install_path .. "/lombok.jar",
-                    "--jvm-arg=-Xbootclasspath/a:" .. install_path .. "/lombok.jar",
                     "-data",
                     workspace_dir,
                 },
