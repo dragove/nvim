@@ -10,7 +10,8 @@
 6. `rustup` for rust-analyzer to work
 7. `cargo` for `parinfer-rust` plugin compile
 8. `deno` for `peek` plugin compile
-9. some lsp server installed by `Mason` needs package managers such as `npm` and `pip` or download tool such as `wget` and `curl`.
+10. `webkit2gtk` for `peek` plugin run
+11. some lsp server installed by `Mason` needs package managers such as `npm` and `pip` or download tool such as `wget` and `curl`.
 
 ## Installation
 
