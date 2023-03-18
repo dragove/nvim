@@ -10,8 +10,8 @@ return {
         { "<F10>", function() require("dap").step_over() end, desc = "Debug step ove" },
         { "<F11>", function() require("dap").step_into() end, desc = "Debug step into" },
         { "<F12>", function() require("dap").step_out() end, desc = "Debug  step out" },
-        { "<leader>b", function() require("dap").toggle_breakpoint() end, desc = "Debug toggle breakpoint" },
-        { "<leader>B",
+        { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "Debug toggle breakpoint" },
+        { "<leader>dB",
             function()
                 require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))
             end,
