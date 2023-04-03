@@ -2,15 +2,11 @@ return {
     {
         "LazyVim/LazyVim",
         opts = {
-            colorscheme = "onedark",
-        },
-        dependencies = {
-            "olimorris/onedarkpro.nvim",
-        },
+            colorscheme = "catppuccin-frappe",
+        }
     },
     -- disable some plugins
     { "folke/tokyonight.nvim", enabled = false },
-    { "catppuccin",            enabled = false },
     { "vim-startuptime",       enabled = false },
     { "rcarriga/nvim-notify",  enabled = false },
 }
